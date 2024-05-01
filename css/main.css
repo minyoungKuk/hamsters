@@ -1,3 +1,37 @@
+/* 공통 st */
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 240px;
+  height: 80px;
+  background-color: #ff2d35;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #fc1d24;
+}
+/* 공통 nd */
+
 /* popup */
 .popup-overlay {
   position: fixed;
