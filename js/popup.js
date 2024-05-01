@@ -18,13 +18,11 @@ confirmButton.addEventListener("click", () =>
 popupClose.addEventListener("click", () => closePopup());
 
 const openPopup = () => {
-  const popupOverlay = document.querySelector("#popupOverlay");
   popupOverlay.style.display = "flex";
   popupMessage.style.color = "black"; // 텍스트를 블랙으로 변경
 };
 
 const closePopup = () => {
-  const popupOverlay = document.querySelector("#popupOverlay");
   popupOverlay.style.display = "none";
 };
 
