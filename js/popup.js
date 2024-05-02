@@ -1,60 +1,54 @@
 const popupOverlay = document.querySelector("#popupOverlay");
 const popupTitle = document.querySelector(".popup-title");
 const popupMessage = document.querySelector(".popup-message");
-const deleteButton = document.querySelector(".delete-btn");
 const confirmButton = document.querySelector(".confirm-btn");
 const popupClose = document.querySelector(".popup-close");
+const popupChkPw = document.querySelector(".popup-chk-pw");
 
-// 삭제 팝업
-deleteButton.addEventListener("click", () =>
-  confirmDelete(popupTitle, popupMessage)
-);
-
-// 비밀번호 체크
-confirmButton.addEventListener("click", () =>
-  confirmAction(popupTitle, popupMessage)
-);
+confirmButton.addEventListener("click", () => confirmAction());
 
 popupClose.addEventListener("click", () => closePopup());
 
 const openPopup = () => {
   popupOverlay.style.display = "flex";
-  popupMessage.style.color = "black"; // 텍스트를 블랙으로 변경
+  popupMessage.style.color = "black";
 };
 
 const closePopup = () => {
   popupOverlay.style.display = "none";
+  confirmButton.removeEventListener("click", confirmAction);
 };
 
-// 삭제 팝업
-const confirmDelete = (popupTitle, popupMessage) => {
-  popupTitle.innerHTML = "리뷰를 삭제하시겠습니까?";
-  popupMessage.innerHTML = `
-  비밀번호 확인 후 리뷰 삭제가 가능합니다.  <br/>
-  비밀 번호를 입력해주세요
-  `;
-
-  const popupChkPw = popupOverlay.querySelector(".popup-chk-pw");
-  popupChkPw.value = ""; // 비밀번호 입력란 초기화
-
-  openPopup();
-};
-
-// 비밀번호 체크
 const confirmAction = () => {
-  const popupChkPw = document.querySelector(".popup-chk-pw");
-  const password = popupChkPw.value;
+  const password = popupChkPw.value; // 여기에서 수정
+  const nickname = popupChkPw.dataset.nickname; // 여기에서 수정
 
-  if (password === "1234") {
+  const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
+  const targetReview = reviewData.find(
+    (review) => review.nickname === nickname
+  );
+
+  if (!targetReview) {
+    popupTitle.innerHTML = "리뷰를 찾을 수 없음";
+    popupMessage.textContent = "해당 리뷰를 찾을 수 없습니다.";
+    openPopup();
+    return;
+  }
+
+  const targetPw = targetReview.password;
+  console.log(targetPw, password);
+  if (password === targetPw) {
+    const updateReviewData = reviewData.filter(
+      (review) => review.nickname !== nickname
+    );
+    localStorage.setItem("reviews", JSON.stringify(updateReviewData));
     closePopup();
+    location.reload();
+    console.log(popupChkPw); // popupChkPw확인 나중에 삭제
   } else {
-    const popupMessage = document.querySelector(".popup-message");
     popupMessage.style.color = "red";
     popupMessage.textContent = "비밀번호가 일치하지 않습니다.";
     popupChkPw.focus();
+    console.log(popupChkPw); // popupChkPw확인 나중에 삭제
   }
-};
-
-const showEditForm = () => {
-  // 수정 팝업
 };
