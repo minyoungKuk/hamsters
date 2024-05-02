@@ -135,8 +135,7 @@ header{
 /* main */
 #main{
   width: 100vw;
-  height: 800px;
-  /* position: relative; */
+  height: 90vh;
 }
 
 .slide-section{
