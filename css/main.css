@@ -211,6 +211,12 @@ header{
   cursor: pointer;
 }
 
+.slide-text button:hover{
+  background-color: red;
+  border: 0px;
+  cursor: pointer;
+}
+
 .slide-btn img{
   width: 30px;
   opacity: 40%;
