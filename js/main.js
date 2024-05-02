@@ -31,5 +31,4 @@ let slideShow = setInterval(function(){
         $('.slide-container').css('transform', `translateX(-0vw)`);
         지금사진 = 1;
     }
-    console.log('무한');
-    }, 7000);
+}, 7000);
