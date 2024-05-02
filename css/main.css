@@ -97,6 +97,9 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 9;
 }
 
 .logo {
@@ -117,8 +120,8 @@ header{
   color: white;
 }
 
-.search-input:active{
-  border: 0px;
+.search-input:focus{
+  outline: none;
 }
 
 .search-btn{
@@ -126,4 +129,9 @@ header{
   border: 0px;
   background-color: transparent;
   margin: 0px 0px 5px 5px;
+}
+
+/* main */
+.slide-box{
+  filter: brightness(45%);
 }
