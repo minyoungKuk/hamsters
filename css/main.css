@@ -25,6 +25,7 @@ body {
   justify-content: center;
   border-radius: 8px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -97,7 +98,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 9;
 }
@@ -134,24 +135,69 @@ header{
 /* main */
 #main{
   width: 100vw;
-  height: 900px;
-  position: relative;
+  height: 800px;
+  /* position: relative; */
+}
+
+.slide-section{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .slide-container{
-  width: 300vw;
-  height: 900px;
   position: absolute;
-  top: -90px;
-  transition: all 3s;
-  transform: translateX(-100vw);
+  top: -80px;
+  width: 300vw;
+  height: 100%;
+  transition: all 1.5s;
+  transform: translateX(0vw);
+}
+
+.slide-box{
+  width: 100vw;
+  float: left;
+}
+
+.slide-box img{
+  width: 100%;
+  filter: brightness(45%);
+}
+
+.slide-text{
+  position: absolute;
+  top: 400px;
+  margin-left: 270px;
+}
+
+.slide-text h3{
+  font-weight: 400;
+  font-size: 23px;
+}
+
+.slide-text h2{
+  font-weight: 700;
+  font-size: 40px;
+  margin: 5px 0px 25px 0px;
+}
+
+.slide-text button{
+  width: 90px;
+  height: 37px;
+  font-size: 13px;
+  color: white;
+  background-color: transparent;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  margin-top: 25px;
 }
 
 .slide-btn{
   width: 100%;
-  height: 100%;
   height: auto;
   position: absolute;
+  top: 50%;
   padding: 0px 80px;
   z-index: 99;
   display: flex;
@@ -159,27 +205,13 @@ header{
   justify-content: space-between;
 }
 
+.slide-btn button{
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+
 .slide-btn img{
   width: 30px;
   opacity: 40%;
-}
-
-.next-btn{
-  background-color: transparent;
-  border: 0px;
-}
-
-.prev-btn{
-  background-color: transparent;
-  border: 0px;
-}
-
-.slide-box{
-  width: 100vw;
-  float: left;
-  filter: brightness(45%);
-}
-
-.slide-box img{
-  width: 100%;
 }
