@@ -3,7 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="title" content="영화 검색 사이트" />
+    <meta
+      name="description"
+      content="영화를 손쉽게 검색하고 간단한 정보를 확인해보세요."
+    />
+    <title>영화 상세 페이지</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="test">
+      <div class="review">
+        <p class="title">Review</p>
+        <ul class="review-list" role="list">
+          <li>
+            <span class="name">삥뽕이</span>
+            <span class="contents">파묘 재밌으니까 꼭 보세요!</span>
+            <span class="btn delete-btn"></span>
+          </li>
+          <li>
+            <span class="name">화가난헐크</span>
+            <span class="contents"
+              >너무너무너무 무서워서 잠도 못잤습니다 그래도 잼나네욤</span
+            >
+          </li>
+          <li>
+            <span class="name">최대글자6개</span>
+            <span class="contents">연기력이 너무 좋아요!!</span>
+          </li>
+        </ul>
+
+        <form class="review-form">
+          <div class="input-group">
+            <input type="text" id="nickname" name="nickname" required />
+            <input type="password" id="password" name="password" required />
+          </div>
+          <textarea
+            id="reviewInput"
+            name="review"
+            rows="4"
+            cols="50"
+          ></textarea>
+
+          <input type="submit" value="제출" class="btn submit-btn" />
+        </form>
+      </div>
+    </div>
+
+    <!-- popup st -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-content">
+        <span class="popup-close"></span>
+        <h2 class="popup-title"></h2>
+        <div class="content-area">
+          <p class="popup-message"></p>
+          <input class="popup-chk-pw" placeholder="****" type="password" />
+        </div>
+        <button class="btn confirm-btn">확인</button>
+      </div>
+    </div>
+    <!-- popup nd -->
+  </body>
+
+  <script src="/js/popup.js"></script>
+  <script src="/js/review.js"></script>
 </html>
