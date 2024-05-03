@@ -32,6 +32,12 @@ body {
 }
 /* 공통 nd */
 
+#totalcard {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
 /* popup */
 .popup-overlay {
   position: fixed;
