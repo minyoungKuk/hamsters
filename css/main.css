@@ -41,7 +41,21 @@
   float: left;
 }
 
+
+#totalcard {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+/* popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
 .slide-box img{
+
   width: 100%;
   filter: brightness(45%);
 }
