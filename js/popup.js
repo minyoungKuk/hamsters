@@ -16,6 +16,7 @@ const openPopup = () => {
 
 const closePopup = () => {
   popupOverlay.style.display = "none";
+  confirmButton.removeEventListener("click", confirmAction);
 };
 
 const confirmAction = () => {
@@ -35,19 +36,17 @@ const confirmAction = () => {
   }
 
   const targetPw = targetReview.password;
-
   if (password === targetPw) {
     const updateReviewData = reviewData.filter(
       (review) => review.nickname !== nickname
     );
     localStorage.setItem("reviews", JSON.stringify(updateReviewData));
-    closePopup(); // 팝업 닫기
-    location.reload(); // 새로고침하여 변경된 데이터 표시
-    console.log(popupChkPw); // popupChkPw가 제대로 참조되었는지 확인
+    closePopup();
+    location.reload();
+    console.log(popupChkPw); // popupChkPw확인 나중에 삭제
   } else {
     popupMessage.style.color = "red";
     popupMessage.textContent = "비밀번호가 일치하지 않습니다.";
     popupChkPw.focus();
-    console.log(popupChkPw); // popupChkPw가 제대로 참조되었는지 확인
   }
 };
