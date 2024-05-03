@@ -32,3 +32,7 @@ let slideShow = setInterval(function(){
         지금사진 = 1;
     }
 }, 7000);
+
+$('.custmer-center').click(function(){
+    alert('고객센터는 준비중입니다.');
+})
