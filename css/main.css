@@ -1,18 +1,18 @@
-/* 공통 st */
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-body {
-  background-color: #000;
-  color: #fff;
+/* main */
+#main{
+  width: 100vw;
+  height: 90vh;
 }
 
-* {
-  font-family: "Noto Sans KR", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  box-sizing: border-box;
+.slide-section{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hidden {
+  display: none;
 }
 
 .btn {
@@ -27,10 +27,20 @@ body {
   margin-top: 20px;
 }
 
-.btn:hover {
-  background-color: #fc1d24;
+.slide-container{
+  width: 300vw;
+  height: 100%;
+  position: absolute;
+  top: -80px;
+  transition: all 1.5s;
+  transform: translateX(0vw);
 }
-/* 공통 nd */
+
+.slide-box{
+  width: 100vw;
+  float: left;
+}
+
 
 #totalcard {
   display: flex;
@@ -43,17 +53,79 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+
+.slide-box img{
+
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-  display: none;
-  justify-content: center;
+  filter: brightness(45%);
+}
+
+.slide-text{
+  position: absolute;
+  top: 45%;
+  margin-left: 270px;
+}
+
+.slide-text h3{
+  font-weight: 400;
+  font-size: 23px;
+}
+
+.slide-text h2{
+  font-weight: 700;
+  font-size: 40px;
+  margin: 5px 0px 25px 0px;
+}
+
+.slide-text button{
+  width: 90px;
+  height: 37px;
+  font-size: 13px;
+  color: white;
+  background-color: transparent;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.slide-btn{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 45%;
+  padding: 0px 80px;
+  z-index: 99;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.slide-btn button{
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+
+.slide-text button:hover{
+  background-color: red;
+  border: 0px;
+  cursor: pointer;
+}
+
+.slide-btn img{
+  width: 30px;
+  opacity: 40%;
+}
+
+/* content-1 */
+.content-1{
+  width: 100%;
+  height: 500px;
 }
 
 .popup-content {
   position: relative;
-  width: 600px;
+  width: 420px;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -64,31 +136,45 @@ body {
   align-items: center;
 }
 
+.popup-content > * {
+  padding-top: 10px;
+}
+
+.popup-content .popup-close {
+  position: absolute;
+  background-image: url(/assets/img/ic-close.png);
+  background-repeat: no-repeat;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+}
+
 .popup-content .btn {
   height: 60px;
   cursor: pointer;
+  padding-top: 0;
 }
 
-.popup-content .content-area {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
+.popup-content .popup-title {
+  font-weight: 600;
 }
 
-.popup-content .popup-overview {
+.popup-content .popup-message {
+  text-align: center;
+  line-height: 24px;
   padding: 20px;
 }
-.popup-content .content-area .popup-id {
-  font-size: 0.8rem;
-}
 
-.popup-content .content-area > div {
-  width: 50%;
-}
-
-.popup-content .content-area .popup-img {
+.popup-content input {
   width: 100%;
-  max-width: 300px;
+  padding: 10px;
+  margin-top: 10px;
 }
-/* popup nd */
+
+.popup-content input::placeholder {
+  font-size: 14px;
+  text-align: center;
+}
