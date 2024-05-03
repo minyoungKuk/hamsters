@@ -4,39 +4,39 @@ let searchTitle = function(){
 }
 
 // main - slide 넘기기
-let 지금사진 = 1;
+let showNow = 1;
 $('.next-btn').on('click', function(){
-    if(지금사진 === 1){
+    if(showNow === 1){
         $('.slide-container').css('transform', `translateX(-100vw)`);
-        지금사진 += 1;
-    } else if(지금사진 === 2){
+        showNow += 1;
+    } else if(showNow === 2){
         $('.slide-container').css('transform', `translateX(-200vw)`);
-        지금사진 += 1;
+        showNow += 1;
     }
 });
 
 
 $('.prev-btn').on('click', function(){
-    if(지금사진 === 2){
+    if(showNow === 2){
         $('.slide-container').css('transform', `translateX(0vw)`);
-        지금사진 -= 1;
-    } else if(지금사진 === 3){
+        showNow -= 1;
+    } else if(showNow === 3){
         $('.slide-container').css('transform', `translateX(-100vw)`);
-        지금사진 -= 1;
+        showNow -= 1;
     }
 });
 
 // main- slide 자동으로 넘어가기
 let slideShow = setInterval(function(){
-    if(지금사진 === 1){
+    if(showNow === 1){
         $('.slide-container').css('transform', `translateX(-100vw)`);
-        지금사진 += 1;
-    } else if(지금사진 === 2){
+        showNow += 1;
+    } else if(showNow === 2){
         $('.slide-container').css('transform', `translateX(-200vw)`);
-        지금사진 += 1;
-    } else if(지금사진 === 3){
+        showNow += 1;
+    } else if(showNow === 3){
         $('.slide-container').css('transform', `translateX(-0vw)`);
-        지금사진 = 1;
+        showNow = 1;
     }
 }, 7000);
 
