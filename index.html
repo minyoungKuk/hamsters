@@ -1,38 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="영화 검색 사이트" />
-    <meta
-      name="description"
-      content="영화를 손쉽게 검색하고 간단한 정보를 확인해보세요."
-    />
-    <title>영화 검색 사이트</title>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <script src="./js/morepage.js" type="module"></script>
-  </head>
-  <body>
-    <div class="wrap">
-      <header></header>
-      <main>
-        <section>
-          <p>전체 영화 리스트</p>
-          <ul id="totalcard"></ul>
-          <button id="more-btn">더보기</button>
-        </section>
-      </main>
-      <footer></footer>
-    </div>
-    <div class="popup-overlay" id="popupOverlay">
-      <div class="popup-content">
-        <h2 class="popup-title"></h2>
-        <div class="content-area">
-          <div class="text-area"></div>
-
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +12,7 @@
   <link rel="stylesheet" href="./css/layout.css" />
   <link rel="stylesheet" href="./css/main.css" />
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="./js/morepage.js" type="module"></script>
 </head>
 
 <body>
@@ -116,6 +85,12 @@
       <button id="more-btn">더보기</button>
     </section>
 
+    <section>
+      <p>전체 영화 리스트</p>
+      <ul id="totalcard"></ul>
+      <button id="more-btn">더보기</button>
+    </section>
+
     <footer>
       <img class="logo" src="./img/logo.png" alt="logo">
       <div class="footer-contents">
@@ -125,6 +100,11 @@
         <span class="footer-line">|</span>
         <p>ⓒ Coding Hamsters</p>
       </div>
+
+    </div>
+  </body>
+
+
     </footer>
 
   </div>
@@ -140,8 +120,8 @@
 
   </body>
   </div>
-  <script src="../js/popup.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="./js/popup.js"></script>
+  <script src="./js/main.js"></script>
  
 </body>
 
