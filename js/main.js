@@ -1,6 +1,7 @@
 
 let 지금사진 = 1;
 $('.next-btn').on('click', function(){
+    console.log('다음');
     if(지금사진 === 1){
         $('.slide-container').css('transform', `translateX(-100vw)`);
         지금사진 += 1;
@@ -11,6 +12,7 @@ $('.next-btn').on('click', function(){
 });
 
 $('.prev-btn').on('click', function(){
+    console.log('이전');
     if(지금사진 === 2){
         $('.slide-container').css('transform', `translateX(0vw)`);
         지금사진 -= 1;
