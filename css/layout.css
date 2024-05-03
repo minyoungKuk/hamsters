@@ -74,7 +74,7 @@ body {
 
 .popup-content .popup-close {
   position: absolute;
-  background-image: url(/assets/img/ic-close.png);
+  background-image: url("../img/ic-close.png");
   background-repeat: no-repeat;
   top: 15px;
   right: 15px;
