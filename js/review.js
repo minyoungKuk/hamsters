@@ -59,7 +59,8 @@ window.onload = () => {
       다른 아이디를 사용해주세요.
       `;
       popupChkPw.classList.add("hidden");
-      confirmButton.addEventListener("click", closePopup);
+      confirmButton.addEventListener("click", closePopup, { once: true });
+      // confirmButton.addEventListener("click", closePopup);
       return;
     }
 
@@ -80,7 +81,7 @@ const appendReviewItem = (review) => {
   listItem.innerHTML = `
     <span class="name">${review.nickname}</span>
     <span class="contents">${review.review}</span>
-    <button class="btn delete-btn" data-nickname="${review.nickname}">삭제</button>
+    <span class="delete-btn" data-nickname="${review.nickname}"></span>
   `;
   reviewList.appendChild(listItem);
 
@@ -102,9 +103,14 @@ const openDeletePopup = (nickname) => {
 
   openPopup();
   popupChkPw.classList.remove("hidden");
+
+  // 이전에 추가된 confirmButton 클릭 이벤트 리스너 제거
+  // confirmButton.removeEventListener("click", confirmAction);
+
+  confirmButton.addEventListener("click", () => confirmAction());
 };
 
-// 닉네임이 유일한지 확인하는 함수
+// 같은 닉네임 있는지 체크
 const isNicknameUnique = (nickname) => {
   const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
   return !reviewData.some((review) => review.nickname === nickname);
