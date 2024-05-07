@@ -7,63 +7,82 @@
   <meta name="title" content="영화 검색 사이트" />
   <meta name="description" content="영화를 손쉽게 검색하고 간단한 정보를 확인해보세요." />
   <title>Hamsters Movie</title>
-  <link rel="icon" type="image" href="./img/logo-icon-white.png">
+  <link rel="icon" type="image" href="./img/logo-icon-white.png" />
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/layout.css" />
   <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/totallist.css" />
+
+  <script src="./js/more.js" type="module"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
 </head>
 
 <body>
   <div class="wrap">
-
     <header>
       <a href="#main"><img src="./img/logo.png" alt="logo" class="logo" /></a>
-      <div class="search-form">
-        <input class="search-input" type="search" placeholder="제목을 검색하세요.">
-        <button class="search-btn" type="button"><img src="./img/icon-search.png" alt="search"></button>
-      </div>
+      <form action="search" class="search-form">
+        <input class="search-input" type="search" placeholder="제목을 검색하세요." />
+        <button class="search-btn" type="submit">
+          <img src="./img/icon-search.png" alt="search" />
+        </button>
+      </form>
     </header>
 
-    <main id="main">
 
+    <main id="main">
       <section class="slide-section">
         <div class="slide-btn">
-          <button class="prev-btn"><img src="./img/prev.png" alt="이전"></button>
-          <button class="next-btn"><img src="./img/next.png" alt="다음"></button>
+          <button class="prev-btn">
+            <img src="./img/prev.png" alt="이전" />
+          </button>
+          <button class="next-btn">
+            <img src="./img/next.png" alt="다음" />
+          </button>
         </div>
         <div class="slide-container">
           <div class="slide-box slide-1">
-            <img src="./img/오펜하이머.jpg" alt="오펜하이머">
+            <img src="./img/오펜하이머.jpg" alt="오펜하이머" />
             <div class="slide-text">
               <h3>이 달의 영화 Pick !</h3>
               <h2>오펜하이머</h2>
-              <p>“나는 이제 죽음이요, 세상의 파괴자가 되었다.” <br>
-                세상을 구하기 위해 세상을 파괴할 지도 모르는 선택을 해야 하는 천재 과학자의 핵개발 프로젝트.<br>
+              <p>
+                “나는 이제 죽음이요, 세상의 파괴자가 되었다.” <br />
+                세상을 구하기 위해 세상을 파괴할 지도 모르는 선택을 해야 하는
+                천재 과학자의 핵개발 프로젝트.<br />
                 크리스토퍼 놀란 감독의 최신 명작을 만나보세요!
               </p>
               <button class="datil-btn">상세보기</button>
             </div>
           </div>
           <div class="slide-box slide-2">
-            <img src="./img/고질라콩.jpg" alt="고질라콩">
+            <img src="./img/고질라콩.jpg" alt="고질라콩" />
             <div class="slide-text">
               <h3>인기 만점 가족영화 !</h3>
               <h2>고질라X콩</h2>
-              <p>고질라 X 콩, 이번에는 한 팀이다! <br>
-                ‘고질라’ VS ‘콩’, 두 타이탄의 전설적인 대결 이후 할로우 어스에 남은 ‘콩’은
-                <br>드디어 애타게 찾던 동족을 발견하지만 그 뒤에 도사리고 있는 예상치 못한 위협에 맞닥뜨린다.
+              <p>
+                고질라 X 콩, 이번에는 한 팀이다! <br />
+                ‘고질라’ VS ‘콩’, 두 타이탄의 전설적인 대결 이후 할로우 어스에
+                남은 ‘콩’은
+                <br />드디어 애타게 찾던 동족을 발견하지만 그 뒤에 도사리고
+                있는 예상치 못한 위협에 맞닥뜨린다.
               </p>
               <button class="datil-btn">상세보기</button>
             </div>
           </div>
           <div class="slide-box slide-3">
-            <img src="./img/오멘.jpg" alt="오멘">
+            <img src="./img/오멘.jpg" alt="오멘" />
             <div class="slide-text">
               <h3>스릴러를 찾으신다면 ?</h3>
               <h2>오멘</h2>
-              <p>수녀가 되기 위해 로마에 가게 된 ‘마거릿’(넬 타이거 프리). <br>
-                그곳에서 새로운 삶을 시작하려는 그때, 믿음을 뒤흔드는 어둠의 그림자를 마주한다. <br>
-                서서히 조여오는 끔찍한 공포가 마침내 정체를 드러내기 시작하는데...
+              <p>
+                수녀가 되기 위해 로마에 가게 된 ‘마거릿’(넬 타이거 프리).
+                <br />
+                그곳에서 새로운 삶을 시작하려는 그때, 믿음을 뒤흔드는 어둠의
+                그림자를 마주한다. <br />
+                서서히 조여오는 끔찍한 공포가 마침내 정체를 드러내기
+                시작하는데...
               </p>
               <button>상세보기</button>
             </div>
@@ -72,14 +91,22 @@
       </section>
     </main>
 
-    <section class="content-1">
+    <section class="content-1"></section>
 
-    </section>
+    <div class="con">
+      <section class="totalmoive">
+        <p class="total-title">전체 영화 리스트</p>
+        <ul id="totalcard"></ul>
+        <button id="more-btn">더보기</button>
+      </section>
+    </div>
+
 
     <footer>
       <img class="logo" src="./img/logo.png" alt="logo">
       <div class="footer-contents">
-        <a href="https://github.com/minyoungKuk/hamsters.git" target="_blank"><img src="./img/icon-github.png" alt="github">Github</a>
+        <a href="https://github.com/minyoungKuk/hamsters.git" target="_blank"><img src="./img/icon-github.png"
+            alt="github">Github</a>
         <span class="footer-line">|</span>
         <p><a href="#" class="custmer-center">고객센터</a></p>
         <span class="footer-line">|</span>
@@ -87,7 +114,7 @@
       </div>
     </footer>
 
-  </div>
+
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup-content">
       <h2 class="popup-title"></h2>
@@ -98,9 +125,11 @@
       <div class="btn" onclick="closePopup()">닫기</div>
     </div>
   </div>
+
+  </div>
   <script src="./js/popup.js"></script>
   <script src="./js/main.js"></script>
-  
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
