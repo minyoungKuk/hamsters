@@ -1,11 +1,11 @@
 let searchInput = document.querySelector('.search-input');
 let searchBtn = document.querySelector('.search-btn');
-let val = searchInput.value; 
+
 
 // 엔터키로 검색버튼 누르기
 searchInput.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
     event.preventDefault();
+    if (event.keyCode === 13) {
     searchBtn.click();
     }
 });
@@ -16,8 +16,9 @@ searchBtn.addEventListener('click', function(){
     if(searchInput.value === ""){ 
         alert('검색어를 입력해주세요.');
     } else if(searchInput.value !== "") {
-    let keyword = searchInput.value; 
-    window.location.href=`/pages/search.html?keyword=${keyword}`; 
+        let keyword = searchInput.value;
+        document.querySelector('.search-text-value').append(keyword);
+    // window.location.href=`/pages/search.html?keyword=${keyword}`; 
     }
 })
 
@@ -38,15 +39,16 @@ const options = {
 };
 
 function searchData (val) {
+    console.log(val);
     fetch(`https://api.themoviedb.org/3/search/movie?language=ko-KR&page=1&query=${val}&api_key=${apiKey}`, options)
     .then(response => response.json())
     .then(response => {
-        document.querySelector('.movie-card').innerHTML = "";
-        
+        // document.querySelector('.movie-card').innerHTML = "";
+
         let movieList = response['results'];
-        console.log(movieList);
+        console.log(response);
+
         movieList.forEach(element => {
-            
             let movieTitle = element['title'];
             let movieImg = element['poster_path'];
             let card = `
@@ -56,23 +58,21 @@ function searchData (val) {
             </div>
             `;
 
+            document.querySelector('.search-result').innerHTML += card;
             
-
-            document.querySelector('.search-result').innerHTML += card; 
         });
+
+        // 검색된 영화 개수 표시하기
+        const movieNum = document.querySelectorAll('.movie-card').length;
+        console.log(movieNum);
+        document.querySelector('.search-text-num').append(`${movieNum}`);
     })
     .catch(err => console.error(alert('오류가 발생했습니다. 다시 시도해주세요.')));
 }
 
 // 검색어 필터링 하기
 searchBtn.addEventListener('click', function(){
+    let val = searchInput.value; 
     searchData(val);
 })
 
-
-
-
-// 검색된 영화 개수 표시하기
-const movieNum = document.querySelectorAll('.movie-card').length;
-console.log(movieNum);
-document.querySelector('.search-text-num').append(`${movieNum}`);
