@@ -35,6 +35,7 @@
 .search-result{
     width: 100%;
     height: auto;
+    min-height: 44vh;
     margin-top: 100px;
     padding: 0px 120px 120px 120px;
     display: grid;
@@ -47,4 +48,9 @@
 .movie-card p{
     text-align: center;
     padding: 10px 0px;
+}
+
+.movie-img{
+    width: 378px;
+    min-width: 250px;
 }

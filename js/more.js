@@ -15,7 +15,7 @@ let movies = [];
 
 async function loadMovies(category, page) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=${page}`,
+    `https://api.themoviedb.org/3/movie/${category}?language=ko-KR&page=${page}`,
     options
   );
   const data = await response.json();

@@ -10,7 +10,7 @@ const clickedMovieId = localStorage.getItem("clickedMovieId");
   };
 
   fetch(
-    `https://api.themoviedb.org/3/movie/${clickedMovieId}?language=en-US`,
+    `https://api.themoviedb.org/3/movie/${clickedMovieId}?language=ko-KR`,
     options
   )
     .then((response) => response.json())
