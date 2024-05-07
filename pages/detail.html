@@ -3,53 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐹HAMSTERS</title>
+    <link rel="icon" type="image" href="../img/logo-icon-white.png" />
     <meta name="title" content="영화 검색 사이트" />
     <meta
       name="description"
       content="영화를 손쉽게 검색하고 간단한 정보를 확인해보세요."
     />
     <title>영화 상세 페이지</title>
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/search.css" />
+    <link rel="stylesheet" href="../css/detail.css" />
   </head>
   <body>
-    <div class="test">
+    <header>
+      <a href="/hamsters/index.html"
+        ><img src="../img/logo.png" alt="logo" class="logo"
+      /></a>
+      <form action="search" class="search-form">
+        <input
+          class="search-input"
+          type="search"
+          placeholder="제목을 검색하세요."
+        />
+        <button class="search-btn" type="submit">
+          <img src="../img/icon-search.png" alt="search" />
+        </button>
+      </form>
+    </header>
+
+    <div class="con">
+      <div class="detail">
+        <img
+          class="detail-poster"
+          src="https://i.namu.wiki/i/EWdG2Jtlu36U1-03moAiO7Hmh1waKlbB0DIEvamksSTTzWCsqDXxUiiPSdcmpAQjh_tUFOwAGhR7LX7f6U0wXQ.webp"
+          alt="poster"
+        />
+        <ul role="list" class="detail-list">
+          <p class="detail-title">파묘</p>
+          <li><span class="title">개봉일</span>2024. 02.22</li>
+          <li><span class="title">평점</span> 6.25</li>
+          <li>
+            <span class="title">줄거리</span>
+            <p class="detail-overview">
+              미국 LA, 거액의 의뢰를 받은 무당 화림과 봉길은 기이한 병이
+              대물림되는 집안의 장손을 만난다. 조상의 묫자리가 화근임을 알아챈
+              화림은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 상덕과 장의사
+              영근이 합류한다. 절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘.
+              상덕은 불길한 기운을 느끼고 제안을 거절하지만, 화림의 설득으로
+              결국 파묘가 시작되고… 나와서는 안될 것이 나왔다
+            </p>
+          </li>
+        </ul>
+      </div>
+
       <div class="review">
         <p class="title">Review</p>
         <ul class="review-list" role="list">
+          <!-- 리스트 목록 화면 예시를 보여드리기 위해 넣어놓은 부분 st -->
           <li>
             <span class="name">삥뽕이</span>
-            <span class="contents">파묘 재밌으니까 꼭 보세요!</span>
-            <span class="btn delete-btn"></span>
+            <span class="contents"
+              >영상과 음악이 너무 좋네요! 모두들 꼭 보시길!</span
+            >
+            <span class="delete-btn"></span>
           </li>
           <li>
             <span class="name">화가난헐크</span>
             <span class="contents"
-              >너무너무너무 무서워서 잠도 못잤습니다 그래도 잼나네욤</span
+              >후기가 좋아서 기대하고 봤는데, 그냥 킬링타임용 영화 같아요~</span
             >
+            <span class="delete-btn"></span>
           </li>
-          <li>
-            <span class="name">최대글자6개</span>
-            <span class="contents">연기력이 너무 좋아요!!</span>
-          </li>
+          <!-- 리스트 목록 화면 예시를 보여드리기 위해 넣어놓은 부분 nd -->
         </ul>
 
         <form class="review-form">
           <div class="input-group">
-            <input type="text" id="nickname" name="nickname" required />
-            <input type="password" id="password" name="password" required />
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              placeholder="닉네임"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호"
+              required
+            />
           </div>
           <textarea
             id="reviewInput"
             name="review"
-            rows="4"
+            rows="2"
             cols="50"
+            placeholder="100글자 이하의 리뷰를 작성해주세요."
           ></textarea>
 
           <input type="submit" value="제출" class="btn submit-btn" />
         </form>
       </div>
     </div>
+
+    <!-- footer -->
+    <footer>
+      <img class="logo" src="../img/logo.png" alt="logo" />
+      <div class="footer-contents">
+        <a href="https://github.com/minyoungKuk/hamsters.git"
+          ><img src="../img/icon-github.png" alt="github" />Github</a
+        >
+        <span class="footer-line">|</span>
+        <p><a href="#" class="custmer-center">고객센터</a></p>
+        <span class="footer-line">|</span>
+        <p>ⓒ Coding Hamsters</p>
+      </div>
+    </footer>
 
     <!-- popup st -->
     <div class="popup-overlay" id="popupOverlay">
@@ -66,6 +139,6 @@
     <!-- popup nd -->
   </body>
 
-  <script src="/js/popup.js"></script>
-  <script src="/js/review.js"></script>
+  <script type="module" src="../js/popup.js"></script>
+  <script type="module" src="../js/review.js"></script>
 </html>

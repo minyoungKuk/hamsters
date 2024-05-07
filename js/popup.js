@@ -1,31 +1,50 @@
-const popupOverlay = document.querySelector("#popupOverlay");
-const popupTitle = document.querySelector(".popup-title");
-const popupMessage = document.querySelector(".popup-message");
-const confirmButton = document.querySelector(".confirm-btn");
-const popupClose = document.querySelector(".popup-close");
-const popupChkPw = document.querySelector(".popup-chk-pw");
+export const openPopup = (title, message, isPasswordPopup = false) => {
+  const popupOverlay = document.getElementById("popupOverlay");
+  const popupTitle = popupOverlay.querySelector(".popup-title");
+  const popupMessage = popupOverlay.querySelector(".popup-message");
+  const popupChkPw = popupOverlay.querySelector(".popup-chk-pw");
+  const confirmButton = popupOverlay.querySelector(".confirm-btn");
 
-confirmButton.addEventListener("click", () => confirmAction());
+  popupOverlay.style.display = "none";
+  popupTitle.textContent = title;
+  popupMessage.textContent = message;
 
-popupClose.addEventListener("click", () => closePopup());
+  if (isPasswordPopup) {
+    popupChkPw.style.display = "block";
+    confirmButton.removeEventListener("click", confirmAction);
+    confirmButton.removeEventListener("click", closePopup);
+    confirmButton.addEventListener("click", confirmAction);
+  } else {
+    popupChkPw.style.display = "none";
+    confirmButton.removeEventListener("click", closePopup);
+    confirmButton.removeEventListener("click", confirmAction);
+    confirmButton.addEventListener("click", closePopup);
+  }
 
-const openPopup = () => {
   popupOverlay.style.display = "flex";
   popupMessage.style.color = "black";
 };
 
-const closePopup = () => {
+export const closePopup = () => {
+  const popupOverlay = document.getElementById("popupOverlay");
+  const confirmButton = popupOverlay.querySelector(".confirm-btn");
+
   popupOverlay.style.display = "none";
-  confirmButton.removeEventListener("click", confirmAction);
 };
 
-const confirmAction = () => {
-  const password = popupChkPw.value; // 여기에서 수정
-  const nickname = popupChkPw.dataset.nickname; // 여기에서 수정
+export const confirmAction = () => {
+  const popupOverlay = document.getElementById("popupOverlay");
+  const popupTitle = popupOverlay.querySelector(".popup-title");
+  const popupMessage = popupOverlay.querySelector(".popup-message");
+  const popupChkPw = popupOverlay.querySelector(".popup-chk-pw");
+  const confirmButton = popupOverlay.querySelector(".confirm-btn");
+
+  const password = popupChkPw.value;
+  const inputNickname = popupChkPw.dataset.nickname;
 
   const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
   const targetReview = reviewData.find(
-    (review) => review.nickname === nickname
+    (review) => review.nickname === inputNickname
   );
 
   if (!targetReview) {
@@ -36,19 +55,24 @@ const confirmAction = () => {
   }
 
   const targetPw = targetReview.password;
-  console.log(targetPw, password);
   if (password === targetPw) {
-    const updateReviewData = reviewData.filter(
-      (review) => review.nickname !== nickname
+    const updatedReviewData = reviewData.filter(
+      (review) => review.nickname !== inputNickname
     );
-    localStorage.setItem("reviews", JSON.stringify(updateReviewData));
+    localStorage.setItem("reviews", JSON.stringify(updatedReviewData));
     closePopup();
     location.reload();
-    console.log(popupChkPw); // popupChkPw확인 나중에 삭제
   } else {
     popupMessage.style.color = "red";
     popupMessage.textContent = "비밀번호가 일치하지 않습니다.";
     popupChkPw.focus();
-    console.log(popupChkPw); // popupChkPw확인 나중에 삭제
   }
 };
+
+// 팝업 닫기 버튼 이벤트 처리
+const popupCloseButton = document.querySelector(".popup-close");
+if (popupCloseButton) {
+  popupCloseButton.addEventListener("click", () => {
+    closePopup();
+  });
+}

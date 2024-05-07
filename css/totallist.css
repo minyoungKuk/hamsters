@@ -1,0 +1,49 @@
+/* 섹션 */
+.totalmoive {
+  display: block;
+  word-wrap: break-word;
+  text-align: center;
+  /* margin-left: 270px;
+  margin-right: 270px; */
+}
+
+/* 제목 */
+.total-title {
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ul 컨테이너*/
+#totalcard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 30px;
+  margin: 0 auto;
+  /* width: 1200px; */
+}
+
+/* li */
+.movie-card {
+  display: inline-grid;
+  list-style: none;
+  width: 240px;
+  height: 320px;
+  margin: 0 0 30px 0;
+  justify-self: center;
+  border-radius: 10px;
+  border: solid rgb(243, 228, 228);
+}
+/* 버튼 */
+#more-btn {
+  font-size: 13px;
+  display: block;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: white;
+  margin: 20px auto 20px auto;
+}

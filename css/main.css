@@ -1,107 +1,107 @@
-/* 공통 st */
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* main */
 
-body {
-  background-color: #000;
-  color: #fff;
+#main {
+  width: 100vw;
+  height: 90vh;
 }
 
-* {
-  font-family: "Noto Sans KR", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  box-sizing: border-box;
-}
-
-.hidden {
-  display: none;
-}
-
-.btn {
-  width: 240px;
-  height: 80px;
-  background-color: #ff2d35;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-.btn:hover {
-  background-color: #fc1d24;
-}
-/* 공통 nd */
-
-/* popup */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.slide-section {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
+  overflow: hidden;
   position: relative;
-  width: 420px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  color: #000;
+}
+
+#totalcard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
 }
 
-.popup-content > * {
-  padding-top: 10px;
-}
-
-.popup-content .popup-close {
+.slide-container {
+  width: 300vw;
+  height: 100%;
   position: absolute;
-  background-image: url(/assets/img/ic-close.png);
-  background-repeat: no-repeat;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  width: 15px;
-  height: 15px;
-  background-size: contain;
+  top: -80px;
+  transition: all 1.5s;
+  transform: translateX(0vw);
 }
 
-.popup-content .btn {
-  height: 60px;
-  cursor: pointer;
-  padding-top: 0;
+.slide-box {
+  width: 100vw;
+  float: left;
 }
 
-.popup-content .popup-title {
-  font-weight: 600;
+#totalcard {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
 }
 
-.popup-content .popup-message {
-  text-align: center;
-  line-height: 24px;
-  padding: 20px;
-}
-
-.popup-content input {
+.slide-box img {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+  filter: brightness(45%);
 }
 
-.popup-content input::placeholder {
-  font-size: 14px;
-  text-align: center;
+.slide-text {
+  position: absolute;
+  top: 45%;
+  margin-left: 270px;
 }
-/* popup nd */
+
+.slide-text h3 {
+  font-weight: 400;
+  font-size: 23px;
+}
+
+.slide-text h2 {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 5px 0px 25px 0px;
+}
+
+.slide-text button {
+  width: 90px;
+  height: 37px;
+  font-size: 13px;
+  color: white;
+  background-color: transparent;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.slide-btn {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 45%;
+  padding: 0px 80px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slide-btn button {
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+
+.slide-text button:hover {
+  background-color: red;
+  border: 0px;
+  cursor: pointer;
+}
+
+.slide-btn img {
+  width: 30px;
+  opacity: 40%;
+}
+
+/* content-1 */
+.content-1 {
+  width: 100%;
+  height: 500px;
+}
