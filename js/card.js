@@ -37,7 +37,6 @@ export function createCard(element) {
   const releaseDate = element.release_date;
   date.innerText = "개봉일: " + releaseDate;
   movieCard.appendChild(date);
-  date.className = "movie-date";
   date.style.display = "none";
 
   return movieCard;
