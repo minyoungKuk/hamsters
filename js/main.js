@@ -46,7 +46,7 @@ let slideShow = setInterval(function(){
         document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
         showNow = 1;
     }
-}, 7000);
+}, 8000);
 
 
 // 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경

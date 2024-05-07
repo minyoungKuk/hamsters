@@ -17,7 +17,6 @@ searchBtn.addEventListener("click", function () {
   } else if (searchInput.value !== "") {
     let keyword = searchInput.value;
     document.querySelector(".search-text-value").append(keyword);
-    // window.location.href=`/pages/search.html?keyword=${keyword}`;
   }
 });
 
@@ -65,7 +64,6 @@ function searchData(val) {
 
       // 검색된 영화 개수 표시하기
       const movieNum = document.querySelectorAll(".movie-card").length;
-      console.log(movieNum);
       document.querySelector(".search-text-num").append(`${movieNum}`);
     })
     .catch((err) =>
@@ -73,18 +71,12 @@ function searchData(val) {
     );
 }
 
+
 // 검색어 필터링 하기
 searchBtn.addEventListener("click", function () {
   let val = searchInput.value;
   searchTextValue.innerHTML = val;
   document.querySelector(".search-text-num").innerHTML = "";
   document.querySelector(".search-result").innerHTML = "";
-
-  //   if (searchTextValue.value !== null) {
-  //     searchTextValue.innerHTML = val;
-  //     document.querySelector(".search-text-num").innerHTML = "";
-  //   } else if(searchTextValue.value === null){
-  //     document.querySelector(".movie-card").innerHTML = "";
-  //   }
   searchData(val);
 });

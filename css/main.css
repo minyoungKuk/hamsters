@@ -23,7 +23,7 @@
   height: 100%;
   position: absolute;
   top: -80px;
-  transition: all 1.5s;
+  transition: all 0.01s;
   transform: translateX(0vw);
 }
 
