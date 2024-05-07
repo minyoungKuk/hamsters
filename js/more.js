@@ -43,10 +43,8 @@ function displayMovies() {
     api.appendChild(movieCard);
 
     // 클릭 이벤트 리스너 추가
-    // api.appendChild(movieCard);
     movieCard.addEventListener("click", () => {
-      handleImageClick(movie.id); // 클릭한 이미지의 ID를 처리하는 함수 호출
-      // 클릭한 이미지에 대한 상세 페이지로 이동하는 코드 추가
+      handleImageClick(movie.id);
       window.location.href = "detail.html";
     });
   });
