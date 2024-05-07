@@ -168,6 +168,7 @@ header {
 
 .search-input {
   width: 180px;
+  height: 29px;
   border: 0px;
   background-color: transparent;
   color: white;
@@ -204,11 +205,13 @@ footer {
 
 .footer-contents img {
   width: 19px;
+
   margin-right: 10px;
 }
 
 .footer-contents a {
-  color: white;
+  color: white;  
+  display: flex;
 }
 
 .footer-line {
