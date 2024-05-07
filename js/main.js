@@ -42,10 +42,13 @@ let slideShow = setInterval(function(){
 
 // 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
 document.querySelector('.search-btn').addEventListener('click', function(){
+    if(document.querySelector('.search-input').value === ""){ // 검색어 입력 안했을 때
+        alert('검색어를 입력해주세요.');
+    } else if(document.querySelector('.search-input').value !== "") {
     let keyword = document.querySelector('.search-input').value; // 사용자가 쓴 검색어 가져오기
     window.location.href=`/pages/search.html?keyword=${keyword}`; // 주소 바꾸기
+    }
 })
-
 
 // footer
 document.querySelector('.custmer-center').addEventListener('click', function(){
