@@ -1,0 +1,110 @@
+img {
+    display: block;
+    width: 100%
+}
+
+.swiper {
+    top: 100px;
+    width: 70%;
+    /* height: 70%; */
+    background-color: black;
+    display: flex;
+    
+  }
+
+.swiper #topRated {
+    height: 600px;
+
+}
+.swiper #popular {
+    height: 600px;
+}
+.radius_img {
+    width: 240px;
+    height: 320px;
+    border-radius: 10px;
+    transition: all .5s;
+    padding-left: 3%;
+    padding-right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transform: scale(0.9);
+    opacity: 1;
+    
+}
+
+.radius_img:hover {
+    opacity: 0.2;
+    transform: scale(1.1);
+    transition: .4s;
+}
+.category {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    bottom: 5px;
+    font-weight: 450;
+    color: #fff;
+}
+.swiper-slide {
+    display: flex;
+    width: 100%;
+}
+
+.swiper .swiper-pagination-bullet {
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: red;
+    position: relative;
+    bottom: 150px;
+}
+.swiper .swiper-pagination-bullet-active {
+    background-color: #fff;
+    width: 40px;
+}
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after{
+    width: 30px;
+    background-color: black;
+    backdrop-filter: blur(3px);
+    background-size: 18px;
+    box-shadow: 0, 0 43px 69px rgba(0,4);
+    background-position: center;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: 0.4s;
+    position: absolute;
+}
+.swiper .swiper-button-next.swiper-button-disabled,
+.swiper .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next{
+    position: absolute;
+    top: 200px;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.swiper .swiper-button-next {
+    color: #fff;
+    align-items: right;
+}
+
+.swiper .swiper-button-prev {
+    color: #fff;
+    align-items: center;
+
+}
+
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover{
+    color: red;
+}

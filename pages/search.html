@@ -10,34 +10,35 @@
     <link rel="icon" type="image" href="../img/logo-icon-white.png">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/search.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 
 <body>
     <div class="wrap">
 
         <header>
-            <a href="#main"><img src="../img/logo.png" alt="logo" class="logo" /></a>
-            <form action="search" class="search-form">
+            <a href="search"><img src="../img/logo.png" alt="logo" class="logo" /></a>
+            <div class="search-form">
                 <input class="search-input" type="search" placeholder="제목을 검색하세요.">
-                <button class="search-btn" type="submit"><img src="../img/icon-search.png" alt="search"></button>
-            </form>
+                <button class="search-btn" type="button"><img src="../img/icon-search.png" alt="search"></button>
+            </div>
         </header>
 
-        <section class="search-title">
-            <div class="search">
+        <section id="search">
+            <div class="search-title">
                 <div class="search-text">
-                    <h2>" <span></span> " 검색 결과</h2>
-                    <p>총 <span></span>개의 영화가 있습니다.</p>
+                    <div><h2>"<span class="search-text-value"></span>" 의 검색 결과</h2></div>
+                    <p>총 <span class="search-text-num"></span>개의 영화가 있습니다.</p>
                 </div>
             </div>
 
         </section>
 
         <section class="search-result">
-            
+            <!-- <div class="movie-card">
+                <img class="movie-img" src="../img/poster.jpg" alt="영화 포스터">
+                <p class="movie-title">영화 제목</p>
+            </div> -->
         </section>
 
         <footer>
@@ -65,8 +66,7 @@
     </div>
 
     <script src="../js/popup.js"></script>
-    <script src="../js/main.js"></script>
-
+    <script src="../js/search.js"></script>
     </div>
 </body>
 
