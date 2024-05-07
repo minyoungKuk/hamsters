@@ -35,7 +35,7 @@
 .search-result{
     width: 100%;
     height: auto;
-    min-height: 50vh;
+    min-height: 44vh;
     margin-top: 100px;
     padding: 0px 120px 120px 120px;
     display: grid;
