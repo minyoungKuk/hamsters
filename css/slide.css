@@ -4,9 +4,9 @@ img {
 }
 
 .swiper {
-    top: 10px;
+    top: 20%;
     width: 70%;
-    height: 70%;
+    /* height: 70%; */
     background-color: black;
     display: flex;
     
@@ -20,8 +20,8 @@ img {
     height: 600px;
 }
 .radius_img {
-    width: 100%;
-    height: 60%;
+    width: 240px;
+    height: 320px;
     border-radius: 10px;
     transition: all .5s;
     padding-left: 3%;
@@ -47,7 +47,7 @@ img {
     font-size: 30px;
     bottom: 5px;
     font-weight: 450;
-    color: red;
+    color: #fff;
 }
 .swiper-slide {
     display: flex;
@@ -58,15 +58,27 @@ img {
     width: 30px;
     height: 5px;
     border-radius: 3px;
-    background-color: #fff;
+    background-color: red;
     position: relative;
     bottom: 150px;
 }
 .swiper .swiper-pagination-bullet-active {
-    background-color: red;
+    background-color: #fff;
     width: 40px;
 }
-
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after{
+    width: 30px;
+    background-color: black;
+    backdrop-filter: blur(3px);
+    background-size: 18px;
+    box-shadow: 0, 0 43px 69px rgba(0,4);
+    background-position: center;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: 0.4s;
+    position: absolute;
+}
 .swiper .swiper-button-next.swiper-button-disabled,
 .swiper .swiper-button-prev.swiper-button-disabled {
     opacity: 0;
@@ -75,22 +87,24 @@ img {
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next{
     position: absolute;
-    top: 220px;
+    top: 200px;
     cursor: pointer;
     background-color: transparent;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 .swiper .swiper-button-next {
-    color: red;
+    color: #fff;
+    align-items: right;
 }
 
 .swiper .swiper-button-prev {
-    color: red;
+    color: #fff;
+    align-items: center;
 
 }
 
 .swiper .swiper-button-next:hover,
 .swiper .swiper-button-prev:hover{
-    color: #fff;
+    color: red;
 }
