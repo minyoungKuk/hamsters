@@ -45,7 +45,7 @@ function displayMovies() {
     // 클릭 이벤트 리스너 추가
     movieCard.addEventListener("click", () => {
       handleImageClick(movie.id);
-      window.location.href = "./detail.html";
+      window.location.href = "./pages/detail.html";
     });
   });
 
