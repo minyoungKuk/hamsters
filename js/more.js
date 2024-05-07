@@ -9,9 +9,9 @@ const options = {
   },
 };
 
-let page = 1; // 페이지 수를 추적합니다.
-const pageSize = 8; // 한 번에 표시할 항목 수를 정의합니다.
-let movies = []; // 모든 영화 데이터를 저장할 배열입니다.
+let page = 1;
+const pageSize = 8;
+let movies = [];
 
 async function loadMovies(category, page) {
   const response = await fetch(
@@ -36,8 +36,8 @@ function handleImageClick(movieId) {
 
 function displayMovies() {
   const api = document.getElementById("totalcard");
-  api.innerHTML = ""; // 이전의 내용을 지웁니다.
-  const moviesToShow = movies.slice(0, page * pageSize); // 현재 페이지까지의 영화만 가져옵니다.
+  api.innerHTML = "";
+  const moviesToShow = movies.slice(0, page * pageSize);
   moviesToShow.forEach((movie) => {
     const movieCard = createCard(movie);
     api.appendChild(movieCard);
@@ -54,14 +54,16 @@ function displayMovies() {
     moreButton.style.display = "none";
   } else {
     const moreButton = document.getElementById("more-btn");
-    moreButton.style.display = "block"; // 버튼을 표시합니다.
-    moreButton.addEventListener("click", loadMore); // 클릭 이벤트를 추가합니다.
+    moreButton.style.display = "block";
+    moreButton.addEventListener("click", loadMore);
   }
 }
 
 function loadMore() {
-  page++; // 페이지 수를 증가시킵니다.
-  displayMovies(); // 영화를 다시 표시합니다.
+  page++;
+  displayMovies();
 }
 
-loadInitialMovies(); // 초기 영화를 로드합니다.
+loadInitialMovies();
+
+// export { handleImageClick };

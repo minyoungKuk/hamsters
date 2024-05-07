@@ -22,7 +22,6 @@ export function createCard(element) {
   score.innerText = "평점: " + scoreAverage;
   movieCard.appendChild(score);
   score.className = "movie-score";
-  // 평점 요소를 화면에 표시하지 않도록 설정
   score.style.display = "none";
 
   // 인기 요소 생성 및 추가
@@ -31,7 +30,6 @@ export function createCard(element) {
   popular.innerText = "인기: " + popularity;
   movieCard.appendChild(popular);
   popular.className = "movie-popularity";
-  // 평점 요소를 화면에 표시하지 않도록 설정
   popular.style.display = "none";
 
   // 개봉일 요소 생성 및 추가
@@ -40,8 +38,6 @@ export function createCard(element) {
   date.innerText = "개봉일: " + releaseDate;
   movieCard.appendChild(date);
   date.className = "movie-date";
-
-  // 평점 요소를 화면에 표시하지 않도록 설정
   date.style.display = "none";
 
   return movieCard;
