@@ -65,5 +65,3 @@ function loadMore() {
 }
 
 loadInitialMovies();
-
-// export { handleImageClick };
