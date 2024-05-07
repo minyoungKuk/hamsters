@@ -1,9 +1,12 @@
+const searchInput = document.querySelector('.search-input');
+const searchBtn = document.querySelector('.search-btn');
+
 // 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
-document.querySelector('.search-btn').addEventListener('click', function(){
-    if(document.querySelector('.search-input').value === ""){ 
+searchBtn.addEventListener('click', function(){
+    if(searchInput.value === ""){ 
         alert('검색어를 입력해주세요.');
-    } else if(document.querySelector('.search-input').value !== "") {
-    let keyword = document.querySelector('.search-input').value; 
+    } else if(searchInput.value !== "") {
+    let keyword = searchInput.value; 
     window.location.href=`/pages/search.html?keyword=${keyword}`; 
     }
 })
@@ -50,12 +53,12 @@ function searchData (val) {
 }
 
 // 검색어 필터링 하기
-document.querySelector('.search-btn').addEventListener('click', function(){
-    const val = document.querySelector('.search-input').value;
+searchBtn.addEventListener('click', function(){
+    const val = searchInput.value;
     searchData(val);
 })
 
 // 검색된 영화 개수 표시하기
-let movieNum = document.querySelectorAll('.movie-card').length;
+const movieNum = document.querySelectorAll('.movie-card').length;
 console.log(movieNum);
 document.querySelector('.search-text-num').append(`${movieNum}`);
