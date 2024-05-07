@@ -2,14 +2,19 @@ export function createCard(element) {
   // 영화 카드 요소 생성
   const movieCard = document.createElement("li");
   movieCard.className = "movie-card";
+  movieCard.style.backgroundImage = `url('https://image.tmdb.org/t/p/w185${element.poster_path}')`;
+  movieCard.style.backgroundSize = "cover";
 
   // 포스터 이미지 요소 생성 및 추가
-  const post = document.createElement("div");
-  movieCard.appendChild(post);
-  const postImg = document.createElement("img");
-  postImg.src = "https://image.tmdb.org/t/p/w185" + element.poster_path;
-  post.appendChild(postImg);
-  postImg.className = "post-card";
+  // const post = document.createElement("div");
+  // movieCard.appendChild(post);
+  // post.className = "post-card";
+  // post.style.backgroundImage = `url('https://image.tmdb.org/t/p/w185${element.poster_path}')`;
+  // post.style.backgroundSize = "cover";
+  // const postImg = document.createElement("img");
+  // postImg.src = "https://image.tmdb.org/t/p/w185" + element.poster_path;
+  // post.appendChild(postImg);
+  // postImg.className = "post-card";
 
   // 평점 요소 생성 및 추가
   const score = document.createElement("p");
