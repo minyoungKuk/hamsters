@@ -29,7 +29,6 @@ async function loadInitialMovies() {
   displayMovies();
 }
 
-// 이미지 클릭추가
 function handleImageClick(movieId) {
   localStorage.setItem("clickedMovieId", movieId);
 }
@@ -42,7 +41,6 @@ function displayMovies() {
     const movieCard = createCard(movie);
     api.appendChild(movieCard);
 
-    // 클릭 이벤트 리스너 추가
     movieCard.addEventListener("click", () => {
       handleImageClick(movie.id);
       window.location.href = "./pages/detail.html";
