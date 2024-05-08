@@ -52,6 +52,7 @@ let slideShow = setInterval(function(){
 // 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
 document.querySelector('.search-btn').addEventListener('click', function(){
     let keyword = document.querySelector('.search-input').value; 
+    console.log(keyword)
     if(document.querySelector('.search-input').value === ""){ 
         alert('검색어를 입력해주세요.');
     } else if(document.querySelector('.search-input').value !== "") {

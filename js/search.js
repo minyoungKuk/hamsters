@@ -1,28 +1,8 @@
+
+
 let searchInput = document.querySelector(".search-input");
 let searchBtn = document.querySelector(".search-btn");
 let searchTextValue = document.querySelector(".search-text-value");
-
-// 엔터키로 검색버튼 누르기
-searchInput.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-    searchBtn.click();
-  }
-});
-
-// 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
-searchBtn.addEventListener("click", function () {
-  if (searchInput.value === "") {
-    alert("검색어를 입력해주세요.");
-  } else if (searchInput.value !== "") {
-    let keyword = searchInput.value;
-    document.querySelector(".search-text-value").append(keyword);
-  }
-});
-
-let params = new URLSearchParams(window.location.search);
-let keyword = params.get("keyword");
-document.querySelector(".search-text-value").append(keyword);
 
 // TMDB 영화 리스트 가져오기
 const apiKey = "4c329d16b4a318497a30199297839bb6";
@@ -44,7 +24,6 @@ function searchData(val) {
   )
     .then((response) => response.json())
     .then((response) => {
-      // document.querySelector('.movie-card').innerHTML = "";
 
       let movieList = response["results"];
       console.log(response);
@@ -70,6 +49,33 @@ function searchData(val) {
       console.error(alert("오류가 발생했습니다. 다시 시도해주세요."))
     );
 }
+
+// 엔터키로 검색버튼 누르기
+searchInput.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    searchBtn.click();
+  }
+});
+
+
+// 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
+searchBtn.addEventListener("click", function () {
+  if (searchInput.value === "") {
+    alert("검색어를 입력해주세요.");
+  } else if (searchInput.value !== "") {
+    let keyword = searchInput.value;
+    document.querySelector(".search-text-value").append(keyword);
+  }
+});
+
+let params = new URLSearchParams(window.location.search);
+let keyword = params.get("keyword");
+document.querySelector(".search-text-value").append(keyword);
+searchData(keyword);
+
+
+
 
 
 // 검색어 필터링 하기
