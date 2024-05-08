@@ -36,7 +36,6 @@ img {
 .radius_img:hover {
     opacity: 0.1;
     box-shadow: 0 4px 12px rgba(0, 79, 255, 0.4);
-    transform: scale(1.1);
     transition: .4s;
 }
 
@@ -46,8 +45,8 @@ img {
     text-align: center;
     bottom: 30px;
     color: #fff;
-    font-weight: 700;
-    font-size: 40px;
+    font-weight: 600;
+    font-size: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -58,30 +57,28 @@ img {
     height: 330px;
     
 }
-.swiper-slide:hover .content {
+/* hover */
+.swiper-slide:hover .content { 
     transition: .4s;
-    color: red;
+    color: #fff;
 }
+/* hover */
 .swiper-slide:hover .content .rating{
     transition: .4s;
     color: gold !important;
 }
-
+/* hover */
 .swiper-slide .content {
   color: transparent;
   position: absolute;
   pointer-events: none;
-  left: 30%;
+  bottom: 20px;
 
 }
 .swiper-slide .content .top {
    top: 10%;
 }    
-.swiper-slide .content .rating {
-    text-align: center;
 
-
-}
 
 .swiper .swiper-pagination-bullet {
     width: 30px;
