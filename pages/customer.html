@@ -1,115 +1,106 @@
 <!-- about -->
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="영화 검색 사이트" />
-    <meta name="description" content="영화를 손쉽게 검색하고 간단한 정보를 확인해보세요." />
+    <meta
+      name="description"
+      content="영화를 손쉽게 검색하고 간단한 정보를 확인해보세요."
+    />
     <title>Hamsters Movie</title>
     <link rel="icon" type="image" href="../img/logo-icon-white.png" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/customer.css" />
+  </head>
 
-    <!--SWIPER-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="../js/customer.js" defer></script>
-
-</head>
-
-<body>
+  <body>
     <div class="wrap">
-        <header>
-            <a href="/"><img src="../img/logo.png" alt="logo" class="logo" /></a>
-            <div class="search-form">
-                <input class="search-input" type="search" placeholder="제목을 검색하세요." />
-                <button class="search-btn" type="button">
-                    <img src="../img/icon-search.png" alt="search" />
-                </button>
-            </div>
-        </header>
-
-        <div>
-            <ul class="accordion">
-                <li class="item">
-                    <h2 class="accordionTitle">리뷰 수정/삭제<span class="accIcon"></span></h2>
-                    <p class="text">비밀번호 입력 후 수정과 삭제가 가능합니다.</p>
-                </li>
-                <hr>
-                <li class="item">
-                    <h2 class="accordionTitle">탈퇴<span class="accIcon"></span></h2>
-                    <p class="text">계정을 탈퇴하는 경우 보유하고 계신 리뷰는 삭제되며 탈퇴 전 안내되는 유의 사항을 꼭 확인 후 진행해 주세요.
-                    </p>
-                </li>
-                <hr>
-                <li class="item">
-                    <h2 class="accordionTitle">검색<span class="accIcon"></span>
-                    </h2>
-                    <p class="text">오른쪽 상단에 위차한 검색창을 이용하시면 검색 가능합니다.</p>
-                </li>
-                <hr>
-                <li class="item">
-                    <h2 class="accordionTitle">문의하기<span class="accIcon"></span></h2>
-                    <p class="text">문의는 <a class="fna-a" href="https://www.notion.so/teamsparta/0ed5699e94ef4e39b307c2435df38ba6?pvs=4" target="_blank">notion</a>이나 <a class="fna-a" href="https://github.com/minyoungKuk/hamsters.git" target="_blank">Github</a>를 이용해주세요. </p>
-                </li>
-                <hr>
-                <li class="item">
-                    <h2 class="accordionTitle">코딩햄스터즈란?<span class="accIcon"></span></h2>
-                    <p class="text">🐹코딩하는 다섯명의 햄스터임니다ㅋ</p>
-                </li>
-                <hr>
-            </ul>
+      <header>
+        <a href="/"><img src="../img/logo.png" alt="logo" class="logo" /></a>
+        <div class="search-form">
+          <input
+            class="search-input"
+            type="search"
+            placeholder="제목을 검색하세요."
+          />
+          <button class="search-btn" type="button">
+            <img src="../img/icon-search.png" alt="search" />
+          </button>
         </div>
-        </section>
+      </header>
+
+      <div class="customer">
+        <h4>고객센터</h4>
+        <ul class="accordion">
+          <li class="item">
+            <p class="accordionTitle">
+              리뷰 입력/삭제<span class="accIcon"></span>
+            </p>
+            <p class="text">비밀번호 입력 후 삭제가 가능합니다.</p>
+          </li>
+          <hr />
+          <li class="item">
+            <p class="accordionTitle">탈퇴<span class="accIcon"></span></p>
+            <p class="text">
+              계정을 탈퇴하는 경우 보유하고 계신 리뷰는 삭제되며 탈퇴 전
+              안내되는 유의 사항을 꼭 확인 후 진행해 주세요.
+            </p>
+          </li>
+          <hr />
+          <li class="item">
+            <p class="accordionTitle">검색<span class="accIcon"></span></p>
+            <p class="text">
+              오른쪽 상단에 위차한 검색창을 이용하시면 검색 가능합니다.
+            </p>
+          </li>
+          <hr />
+          <li class="item">
+            <p class="accordionTitle">문의하기<span class="accIcon"></span></p>
+            <p class="text">
+              문의는
+              <a
+                class="fna-a"
+                href="https://www.notion.so/teamsparta/0ed5699e94ef4e39b307c2435df38ba6?pvs=4"
+                target="_blank"
+                >notion</a
+              >이나
+              <a
+                class="fna-a"
+                href="https://github.com/minyoungKuk/hamsters.git"
+                target="_blank"
+                >Github</a
+              >를 이용해주세요.
+            </p>
+          </li>
+          <hr />
+          <li class="item">
+            <p class="accordionTitle">
+              코딩햄스터즈란?<span class="accIcon"></span>
+            </p>
+            <p class="text">🐹코딩하는 다섯명의 햄스터임니다ㅋ</p>
+          </li>
+          <hr />
+        </ul>
+      </div>
     </div>
 
     <footer>
-        <img class="logo" src="../img/logo.png" alt="logo" />
-        <div class="footer-contents">
-            <a href="https://github.com/minyoungKuk/hamsters.git" target="_blank"><img src="../img/icon-github.png"
-                    alt="github" />Github</a>
-            <span class="footer-line">|</span>
-            <p>
-                <a href="../pages/customer.html" class="custmer-center">고객센터</a>
-            </p>
-            <span class="footer-line">|</span>
-            <p>ⓒ Coding Hamsters</p>
-        </div>
+      <img class="logo" src="../img/logo.png" alt="logo" />
+      <div class="footer-contents">
+        <a href="https://github.com/minyoungKuk/hamsters.git" target="_blank"
+          ><img src="../img/icon-github.png" alt="github" />Github</a
+        >
+        <span class="footer-line">|</span>
+        <p>
+          <a href="../pages/customer.html" class="custmer-center">고객센터</a>
+        </p>
+        <span class="footer-line">|</span>
+        <p>ⓒ Coding Hamsters</p>
+      </div>
     </footer>
-</body>
-
-<script>
-
-    // variables
-    let accordionBtn = document.querySelectorAll(".accordionTitle");
-    let allTexts = document.querySelectorAll(".customer-text");
-    let accIcon = document.querySelectorAll(".accIcon");
-
-    document.querySelector(".accordion").addEventListener("click", toggleAccordion);
-
-    function toggleAccordion(e) {
-        const targetItem = e.target.closest(".item");
-        const targetTitle = targetItem.querySelector(".accordionTitle");
-        const targetText = targetItem.querySelector(".text");
-        console.log("targetTitle", targetTitle);
-        console.log("targetText", targetText);
-
-        /**
-         * targetText가 보이고 있으면 targetText 미노출
-         * targetText가 미노출이면 노출시켜줘야함
-         * show
-         */
-
-        if (targetText.classList.contains("show")) {
-            targetText.classList.remove("show");
-        } else {
-            targetText.classList.add("show");
-        }
-    }
-</script>
-
+    <script src="../js/customer.js" defer></script>
+  </body>
 </html>
