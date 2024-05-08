@@ -22,7 +22,7 @@ export function createCard(element) {
   score.innerText = "평점: " + scoreAverage;
   movieCard.appendChild(score);
   score.className = "movie-score";
-  score.style.display = "none";
+  // score.style.display = "none";
 
   // 인기 요소 생성 및 추가
   const popular = document.createElement("p");
@@ -30,7 +30,7 @@ export function createCard(element) {
   popular.innerText = "인기: " + popularity;
   movieCard.appendChild(popular);
   popular.className = "movie-popularity";
-  popular.style.display = "none";
+  // popular.style.display = "none";
 
   // 개봉일 요소 생성 및 추가
   const date = document.createElement("p");

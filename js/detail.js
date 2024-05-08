@@ -1,4 +1,10 @@
+// const urlParams = new URLSearchParams(window.location.search);
+// const movieId = urlParams.get('movieId');
+
 const clickedMovieId = localStorage.getItem("clickedMovieId");
+
+
+
 {
   const options = {
     method: "GET",
@@ -10,7 +16,7 @@ const clickedMovieId = localStorage.getItem("clickedMovieId");
   };
 
   fetch(
-    `https://api.themoviedb.org/3/movie/${clickedMovieId}?language=en-US`,
+    `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
     options
   )
     .then((response) => response.json())
