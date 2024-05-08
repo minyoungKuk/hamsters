@@ -29,6 +29,7 @@ const options = {
 new Swiper('.swiper', {
     slidesPerView: 4,
     slidesPerGroup: 4,
+    spaceBetween: 20,
     freeMode: true,
     thredshold: 100,
     pagination: {
@@ -93,20 +94,22 @@ popular.innerHTML ="";
         `
     })
 
-      new Swiper('.movie-cards .swiper-container' , {
-        slidesPerView: 4, // 한 번에 보여줄 슬라이드 개수
-        slidesPerGroup: 4, // 한 번에 보여줄 슬라이드 그룹 개수
-        thredshold: 100,
-        freeMode : true, // 슬라이드 넘길 때 위치 고정 여부 
-        pagination: { // 페이지 번호 사용 여부
-          el: '.swiper-container .swiper-pagination', // 페이지 번호 요소 선택자
-          clickable: true, // 사용자의 페이지 번호 요소 제어 가능 여부
-        },
-        navigation: { // 슬라이드 이전/다음 버튼 사용 여부
-          prevEl: '.swiper-button-prev', // 이전 버튼 선택자
-          nextEl: '.swiper-button-next' // 다음 버튼 선택자
-        },
-    });
+    new Swiper('.swiper', {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 20,
+      freeMode: true,
+      thredshold: 100,
+      pagination: {
+        el: '.swiper .swiper-pagination',
+        clickable: true,
+      },
+    
+      navigation: {
+        prevEl: '.swiper .swiper-button-prev',
+        nextEl: '.swiper .swiper-button-next',
+      },
+  }); 
         // breakpoints:{
         //   280: {
         //        //280px 이하의 크기에서 옵션 값 
