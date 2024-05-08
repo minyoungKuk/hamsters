@@ -4,8 +4,8 @@ img {
 }
 
 .swiper {
-    top: 100px;
-    width: 70%;
+    /* top: 100px; */
+    width: 90%;
     /* height: 70%; */
     background-color: black;
     display: flex;
@@ -24,34 +24,55 @@ img {
     height: 320px;
     border-radius: 10px;
     transition: all .5s;
-    padding-left: 3%;
-    padding-right: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    transform: scale(0.9);
-    opacity: 1;
+    /* opacity: 1; */
     
 }
 
 .radius_img:hover {
-    opacity: 0.2;
+    /* opacity: 0.2; */
+    box-shadow: 0 4px 12px rgba(0, 79, 255, 0.4);
     transform: scale(1.1);
     transition: .4s;
+}
+
+.radius_img:hover .content{
+    opacity: 1;
 }
 .category {
     width: 100%;
     position: relative;
     text-align: center;
-    font-size: 30px;
-    bottom: 5px;
-    font-weight: 450;
+    bottom: 30px;
     color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .swiper-slide {
     display: flex;
+    align-items: center;
     width: 100%;
+}
+
+.swiper-slide .txt{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0. 0. 0.5);
+    opacity: 0;
+    transition: opacity .2se;
+
+
 }
 
 .swiper .swiper-pagination-bullet {
@@ -60,7 +81,7 @@ img {
     border-radius: 3px;
     background-color: red;
     position: relative;
-    bottom: 150px;
+    bottom: 220px;
 }
 .swiper .swiper-pagination-bullet-active {
     background-color: #fff;
@@ -74,7 +95,7 @@ img {
     background-size: 18px;
     box-shadow: 0, 0 43px 69px rgba(0,4);
     background-position: center;
-    border-radius: 50%;
+    border-radius: 3%;
     -webkit-transition: .4s;
     transition: 0.4s;
     position: absolute;
@@ -95,12 +116,10 @@ img {
 }
 .swiper .swiper-button-next {
     color: #fff;
-    align-items: right;
 }
 
 .swiper .swiper-button-prev {
     color: #fff;
-    align-items: center;
 
 }
 
