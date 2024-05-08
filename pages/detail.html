@@ -16,10 +16,12 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/search.css" />
     <link rel="stylesheet" href="../css/detail.css" />
+    <script src="../js/detail.js" type="module"></script>
   </head>
+
   <body>
     <header>
-      <a href="/hamsters/index.html"
+      <a href="../index.html"
         ><img src="../img/logo.png" alt="logo" class="logo"
       /></a>
       <form action="search" class="search-form">
@@ -35,36 +37,15 @@
     </header>
 
     <div class="con">
-      <div class="detail">
-        <img
-          class="detail-poster"
-          src="https://i.namu.wiki/i/EWdG2Jtlu36U1-03moAiO7Hmh1waKlbB0DIEvamksSTTzWCsqDXxUiiPSdcmpAQjh_tUFOwAGhR7LX7f6U0wXQ.webp"
-          alt="poster"
-        />
-        <ul role="list" class="detail-list">
-          <p class="detail-title">파묘</p>
-          <li><span class="title">개봉일</span>2024. 02.22</li>
-          <li><span class="title">평점</span> 6.25</li>
-          <li>
-            <span class="title">줄거리</span>
-            <p class="detail-overview">
-              미국 LA, 거액의 의뢰를 받은 무당 화림과 봉길은 기이한 병이
-              대물림되는 집안의 장손을 만난다. 조상의 묫자리가 화근임을 알아챈
-              화림은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 상덕과 장의사
-              영근이 합류한다. 절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘.
-              상덕은 불길한 기운을 느끼고 제안을 거절하지만, 화림의 설득으로
-              결국 파묘가 시작되고… 나와서는 안될 것이 나왔다
-            </p>
-          </li>
-        </ul>
-      </div>
+      <div class="detail" id="detail"></div>
 
       <div class="review">
         <p class="title">Review</p>
         <ul class="review-list" role="list">
+          <!-- 페이지 진입시 리뷰형식을 보여주기위한 하드코딩 리뷰 추가 -->
           <li>
             <span class="name">삥뽕이</span>
-            <span class="contents">파묘 재밌으니까 꼭 보세요!</span>
+            <span class="contents">재밌으니까 꼭 보세요!</span>
             <span class="delete-btn"></span>
           </li>
           <li>
@@ -79,6 +60,7 @@
             <span class="contents">연기력이 너무 좋아요!!</span>
             <span class="delete-btn"></span>
           </li>
+          <!-- 페이지 진입시 리뷰형식을 보여주기위한 하드코딩 리뷰 추가 -->
         </ul>
 
         <form class="review-form">
@@ -139,7 +121,6 @@
     </div>
     <!-- popup nd -->
   </body>
-
-  <script src="../js/popup.js"></script>
-  <script src="../js/review.js"></script>
+  <script type="module" src="../js/popup.js"></script>
+  <script type="module" src="../js/review.js"></script>
 </html>
