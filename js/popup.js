@@ -69,7 +69,6 @@ export const confirmAction = () => {
   }
 };
 
-// 팝업 닫기 버튼 이벤트 처리
 const popupCloseButton = document.querySelector(".popup-close");
 if (popupCloseButton) {
   popupCloseButton.addEventListener("click", () => {
