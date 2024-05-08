@@ -21,6 +21,8 @@ const options = {
     <div class="content">
     <p class="title">${card.title}</p>
     <p class="rating">${'평점 : '}${card.vote_average.toFixed(1)}</p>
+    </div>
+    </div>
     `
   });
 });
@@ -68,7 +70,6 @@ popular.innerHTML ="";
       popularArray.forEach((card) => {
         popular.innerHTML += `
         <div class="swiper-slide" id=${card.id}>
-        <div class="swiper-slide">
         <img src="https://image.tmdb.org/t/p/w300${card.poster_path}" 
         class="radius_img" alt="영화이미지" />
         <div class="content">
@@ -103,13 +104,13 @@ popular.innerHTML ="";
 
      // 이미지 클릭추가
      function handleImageClick(e) {
-      console.log('e.target', e.target)
+      // console.log('e.target', e.target)
       const targetMovie = e.target.closest('.swiper-slide');
-      console.log(targetMovie);
+      // console.log(targetMovie);
       const movieId = targetMovie.getAttribute('id')
       location.href=`/pages/detail.html?movieId=${movieId}`
-    
     }
+    
         // breakpoints:{
         //   280: {
         //        //280px 이하의 크기에서 옵션 값 
