@@ -1,5 +1,6 @@
 let searchInput = document.querySelector('.search-input');
 let searchBtn = document.querySelector('.search-btn');
+let detailBtn = document.querySelectorAll('.detail-btn');
 
 // 엔터키로 검색버튼 누르기
 searchInput.addEventListener("keyup", function (event) {
@@ -8,6 +9,19 @@ searchInput.addEventListener("keyup", function (event) {
     searchBtn.click();
     }
 });
+
+
+// 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
+document.querySelector('.search-btn').addEventListener('click', function(){
+    let keyword = document.querySelector('.search-input').value; 
+    console.log(keyword)
+    if(document.querySelector('.search-input').value === ""){ 
+        alert('검색어를 입력해주세요.');
+    } else if(document.querySelector('.search-input').value !== "") {
+    
+    window.location.href=`/pages/search.html?keyword=${keyword}`; 
+    }
+})
 
 
 // main - slide 클릭하여 넘기기
@@ -19,6 +33,9 @@ document.querySelector('.next-btn').addEventListener('click', function(){
     } else if(showNow === 2){
         document.querySelector('.slide-container').style.transform = 'translateX(-200vw)';
         showNow += 1;
+    } else if(showNow === 3){
+        document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
+        showNow = 1;
     }
 });
 
@@ -30,6 +47,9 @@ document.querySelector('.prev-btn').addEventListener('click', function(){
     } else if(showNow === 3){
         document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
         showNow -= 1;
+    } else if(showNow === 1){
+        document.querySelector('.slide-container').style.transform = 'translateX(-200vw)';
+        showNow = 3;
     }
 });
 
@@ -46,17 +66,16 @@ let slideShow = setInterval(function(){
         document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
         showNow = 1;
     }
-}, 7000);
+}, 8000);
 
 
-// 검색 버튼 누르면 querystring으로 현재 주소를 "주소?keyword=검색어"로 변경
-document.querySelector('.search-btn').addEventListener('click', function(){
-    if(document.querySelector('.search-input').value === ""){ 
-        alert('검색어를 입력해주세요.');
-    } else if(document.querySelector('.search-input').value !== "") {
-    let keyword = document.querySelector('.search-input').value; 
-    window.location.href=`/pages/search.html?keyword=${keyword}`; 
-    }
+// 슬라이드 상세보기 버튼 클릭하면 상세페이지로 이동
+detailBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        console.log(btn.dataset.id);
+        localStorage.setItem("clickedMovieId", btn.dataset.id);
+        window.location.href = "./pages/detail.html";
+    });    
 })
 
 
