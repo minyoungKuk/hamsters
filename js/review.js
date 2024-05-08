@@ -3,23 +3,9 @@ import { openPopup, closePopup, confirmAction } from "./popup.js";
 window.onload = () => {
   const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
   const reviewList = document.querySelector(".review-list");
+  const clickedMovieId = localStorage.getItem("clickedMovieId");
 
-  if (reviewData) {
-    reviewData.forEach((review) => {
-      appendReviewItem(review);
-    });
-  }
-
-  // 리뷰 삭제 버튼 이벤트 추가
-  const deleteButtons = document.querySelectorAll(".delete-btn");
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const nickname = button.dataset.nickname;
-      openDeletePopup(nickname); // 삭제 팝업 열기
-    });
-  });
-
-  // 리뷰 추가 이벤트 리스너
+  // 리뷰 추가
   const reviewForm = document.querySelector(".review-form");
   reviewForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -27,6 +13,7 @@ window.onload = () => {
     const nickname = document.getElementById("nickname").value;
     const password = document.getElementById("password").value;
     const review = document.getElementById("reviewInput").value;
+    const movieId = localStorage.getItem("clickedMovieId");
 
     // 유효성 검사 - 닉네임 2글자 이상!
     if (nickname.length < 2) {
@@ -41,7 +28,7 @@ window.onload = () => {
     }
 
     // 유효성 검사 - 닉네임 중복 금지!
-    if (!isNicknameUnique(nickname)) {
+    if (!isNicknameUnique(nickname, movieId)) {
       openPopup(
         "경고",
         "이미 존재하는 아이디입니다. 다른 아이디를 사용해주세요."
@@ -50,13 +37,30 @@ window.onload = () => {
     }
 
     let reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
-    reviewData.push({ nickname, password, review });
+    reviewData.push({ nickname, password, review, movieId });
     localStorage.setItem("reviews", JSON.stringify(reviewData));
 
-    appendReviewItem({ nickname, review });
+    // 현재 영화 리뷰만 표시
+    if (movieId === clickedMovieId) {
+      appendReviewItem({ nickname, review });
+    }
 
-    // 초기화
     reviewForm.reset();
+  });
+
+  // 리뷰 삭제 버튼
+  reviewList.addEventListener("click", (event) => {
+    const deleteButton = event.target.closest(".delete-btn");
+    if (deleteButton) {
+      const nickname = deleteButton.dataset.nickname;
+      openDeletePopup(nickname);
+    }
+  });
+
+  reviewData.forEach((review) => {
+    if (review.movieId === clickedMovieId) {
+      appendReviewItem(review);
+    }
   });
 };
 
@@ -69,15 +73,9 @@ const appendReviewItem = (review) => {
     <span class="delete-btn" data-nickname="${review.nickname}"></span>
   `;
   reviewList.appendChild(listItem);
-
-  const deleteButton = listItem.querySelector(".delete-btn");
-  deleteButton.addEventListener("click", () => {
-    const nickname = deleteButton.dataset.nickname;
-    openDeletePopup(nickname);
-  });
 };
 
-// 삭제 팝업 열기
+// 삭제 팝업
 const openDeletePopup = (inputNickname) => {
   openPopup("리뷰 삭제", "비밀번호를 입력하세요.", true);
 
@@ -87,8 +85,11 @@ const openDeletePopup = (inputNickname) => {
   popupChkPw.value = "";
 };
 
-// 같은 닉네임 있는지 체크
-const isNicknameUnique = (nickname) => {
+// 같은 영화내에서의 같은 닉네임이 있는지 체크
+const isNicknameUnique = (nickname, movieId) => {
   const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
-  return !reviewData.some((review) => review.nickname === nickname);
+  const filterdReviews = reviewData.filter(
+    (review) => review.movieId === movieId
+  );
+  return !filterdReviews.some((review) => review.nickname === nickname);
 };
