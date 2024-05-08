@@ -4,7 +4,7 @@ img {
 }
 
 .swiper {
-    /* top: 100px; */
+    top: 100px;
     width: 90%;
     /* height: 70%; */
     background-color: black;
@@ -25,6 +25,7 @@ img {
     border-radius: 10px;
     transition: all .5s;
     display: flex;
+    border: 1px solid #fff;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
@@ -87,7 +88,7 @@ img {
     background-color: #fff;
     width: 40px;
 }
-.swiper .swiper-button-prev::after,
+/* .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after{
     width: 30px;
     background-color: black;
@@ -99,7 +100,7 @@ img {
     -webkit-transition: .4s;
     transition: 0.4s;
     position: absolute;
-}
+} */
 .swiper .swiper-button-next.swiper-button-disabled,
 .swiper .swiper-button-prev.swiper-button-disabled {
     opacity: 0;
@@ -108,7 +109,7 @@ img {
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next{
     position: absolute;
-    top: 200px;
+    top: 260px;
     cursor: pointer;
     background-color: transparent;
     -webkit-transition: 0.4s;

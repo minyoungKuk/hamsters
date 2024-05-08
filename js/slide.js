@@ -29,6 +29,7 @@ const options = {
 new Swiper('.swiper', {
     slidesPerView: 4,
     slidesPerGroup: 4,
+    spaceBetween: 20,
     freeMode: true,
     thredshold: 100,
     pagination: {
@@ -96,6 +97,7 @@ popular.innerHTML ="";
       new Swiper('.movie-cards .swiper-container' , {
         slidesPerView: 4, // 한 번에 보여줄 슬라이드 개수
         slidesPerGroup: 4, // 한 번에 보여줄 슬라이드 그룹 개수
+        spaceBetween: 20,
         thredshold: 100,
         freeMode : true, // 슬라이드 넘길 때 위치 고정 여부 
         pagination: { // 페이지 번호 사용 여부

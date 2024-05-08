@@ -17,8 +17,13 @@ body {
 
 .con {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 100px auto;
+}
+.con2 {
+  width: 100%;
+  max-width: 1100px;
+  margin: -50px auto;
   padding: 20px;
 }
 
