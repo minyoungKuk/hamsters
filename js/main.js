@@ -33,6 +33,9 @@ document.querySelector('.next-btn').addEventListener('click', function(){
     } else if(showNow === 2){
         document.querySelector('.slide-container').style.transform = 'translateX(-200vw)';
         showNow += 1;
+    } else if(showNow === 3){
+        document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
+        showNow = 1;
     }
 });
 
@@ -44,6 +47,9 @@ document.querySelector('.prev-btn').addEventListener('click', function(){
     } else if(showNow === 3){
         document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
         showNow -= 1;
+    } else if(showNow === 1){
+        document.querySelector('.slide-container').style.transform = 'translateX(-200vw)';
+        showNow = 3;
     }
 });
 
