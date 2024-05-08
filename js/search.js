@@ -26,24 +26,36 @@ function searchData(val) {
     .then((response) => {
 
       let movieList = response["results"];
-      console.log(response);
 
       movieList.forEach((element) => {
         let movieTitle = element["title"];
         let movieImg = element["poster_path"];
+        let movieId = element["id"];
         let card = `
             <div class="movie-card">
-            <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movieImg}" alt="${movieTitle}">
+            <a href="../pages/detail.html" class="movie-a" data-id="${movieId}">
+              <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movieImg}" alt="${movieTitle}" />
+            </a>
             <p class="movie-title">${movieTitle}</p>
             </div>
             `;
 
         document.querySelector(".search-result").innerHTML += card;
       });
+      
 
       // 검색된 영화 개수 표시하기
       const movieNum = document.querySelectorAll(".movie-card").length;
       document.querySelector(".search-text-num").append(`${movieNum}`);
+
+      document.querySelectorAll('.movie-a').forEach((a) => {
+        a.addEventListener("click", () => {
+            console.log(a.dataset.id);
+            localStorage.setItem("clickedMovieId", a.dataset.id);
+            window.location.href = "../pages/detail.html";
+        });    
+      })
+      
     })
     .catch((err) =>
       console.error(alert("오류가 발생했습니다. 다시 시도해주세요."))
@@ -69,12 +81,12 @@ searchBtn.addEventListener("click", function () {
   }
 });
 
+
+// 메인페이지 검색어를 주소로 받아와서 검색 결과로 표시하기
 let params = new URLSearchParams(window.location.search);
 let keyword = params.get("keyword");
 document.querySelector(".search-text-value").append(keyword);
 searchData(keyword);
-
-
 
 
 
@@ -86,3 +98,6 @@ searchBtn.addEventListener("click", function () {
   document.querySelector(".search-result").innerHTML = "";
   searchData(val);
 });
+
+
+// 포스터 클릭하면 상세페이지 띄우기
