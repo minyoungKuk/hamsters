@@ -20,7 +20,9 @@ const options = {
     <div class="swiper-slide">
     <img src="https://image.tmdb.org/t/p/w300${card.poster_path}" 
     class="radius_img" alt="영화이미지" />
-    </div>
+    <div class="content">
+    <p class="title">${card.title}</p>
+    <p class="rating">${'평점 : '}${card.vote_average.toFixed(1)}</p>
     `
 
 
@@ -90,6 +92,10 @@ popular.innerHTML ="";
         <div class="swiper-slide">
         <img src="https://image.tmdb.org/t/p/w300${card.poster_path}" 
         class="radius_img" alt="영화이미지" />
+        <div class="content">
+        <p class="title">${card.title}</p>
+        <p class="rating">${'평점 : '}${card.vote_average.toFixed(1)}</p>
+       </div>
         </div>
         `
     })
