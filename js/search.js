@@ -48,6 +48,8 @@ function searchData(val) {
       const movieNum = document.querySelectorAll(".movie-card").length;
       document.querySelector(".search-text-num").append(`${movieNum}`);
 
+
+      // 포스터 클릭하면 상세페이지 띄우기
       document.querySelectorAll('.movie-a').forEach((a) => {
         a.addEventListener("click", () => {
             console.log(a.dataset.id);
@@ -55,7 +57,7 @@ function searchData(val) {
             window.location.href = "../pages/detail.html";
         });    
       })
-      
+
     })
     .catch((err) =>
       console.error(alert("오류가 발생했습니다. 다시 시도해주세요."))
@@ -98,6 +100,3 @@ searchBtn.addEventListener("click", function () {
   document.querySelector(".search-result").innerHTML = "";
   searchData(val);
 });
-
-
-// 포스터 클릭하면 상세페이지 띄우기

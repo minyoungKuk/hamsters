@@ -140,9 +140,8 @@ body {
 
 /* head */
 header {
-  width: 100%;
+  width: 100vw;
   height: 100px;
-  /* background-color: black; */
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 20%,
@@ -188,6 +187,7 @@ header {
   cursor: pointer;
 }
 
+
 /* footer */
 footer {
   width: 100%;
@@ -203,11 +203,11 @@ footer {
 .footer-contents {
   display: flex;
   align-items: center;
+  
 }
 
 .footer-contents img {
   width: 19px;
-
   margin-right: 10px;
 }
 
@@ -218,4 +218,43 @@ footer {
 
 .footer-line {
   margin: 0px 40px;
+}
+
+/* 반응형 Break point 768px */
+@media screen and (max-width : 768px){
+  
+  /* header */
+  header{
+    width: 100vw;
+    height: 50px;
+    padding: 0px 20px;
+  }
+
+  header > .logo{
+    height: 20px;
+  }
+
+  .search-form{
+    height: 30px;
+    padding: 0px 0px 5px 5px;
+  }
+
+  .search-input{
+    width: 130px;
+    font-size: 13px;
+  }
+
+  .search-btn{
+    width: 13px;
+  }
+
+  /* footer */
+  footer{
+    height: 180px;
+    font-size: 13px;
+    margin: auto;
+    padding: 50px 150px;
+    display: flex;
+    flex-direction: column;
+  }
 }
