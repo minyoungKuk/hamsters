@@ -32,7 +32,7 @@ const options = {
   topRated.addEventListener('click', handleImageClick)
   
 new Swiper('.swiper', {
-    slidesPerView: 4,
+    slidesPerView: 2,
     slidesPerGroup: 4,
     spaceBetween: 20,
     freeMode: true,
@@ -46,27 +46,22 @@ new Swiper('.swiper', {
       prevEl: '.swiper .swiper-button-prev',
       nextEl: '.swiper .swiper-button-next',
     },
+    breakpoints: {
+        600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        900: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1200: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
 
-  }); 
-
-  let swiper = new Swiper('.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      breakpoints: {
-          '@0.75': {
-              slidesPerView: 2,
-              spaceBetween: 20,
-          },
-          '@1.00': {
-              slidesPerView: 4,
-              spaceBetween: 40,
-          },
-          '@1.50': {
-              slidesPerView: 4,
-              spaceBetween: 50,
-          },
       }
-    });  
+  });   
 
   // 이미지 클릭추가
   function handleImageClick(e) {
@@ -102,22 +97,7 @@ popular.innerHTML ="";
   // 클릭 이벤트 리스너 추가
   popular.addEventListener('click', handleImageClick)
 
-  new Swiper('.swiper', {
-    slidesPerView: 4,
-    slidesPerGroup: 4,
-    spaceBetween: 20,
-    freeMode: true,
-    thredshold: 100,
-    pagination: {
-      el: '.swiper .swiper-pagination',
-      clickable: true,
-    },
-  
-    navigation: {
-      prevEl: '.swiper .swiper-button-prev',
-      nextEl: '.swiper .swiper-button-next',
-    },
-  }); 
+
 });
 
   
