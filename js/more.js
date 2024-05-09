@@ -1,4 +1,5 @@
 import { createCard } from "./card.js";
+import { openDetailPage } from "./common.js";
 
 const options = {
   method: "GET",
@@ -29,9 +30,7 @@ async function loadInitialMovies() {
   displayMovies();
 }
 
-function handleImageClick(movieId) {
-  localStorage.setItem("clickedMovieId", movieId);
-}
+
 
 function displayMovies() {
   const api = document.getElementById("totalcard");
@@ -42,8 +41,7 @@ function displayMovies() {
     api.appendChild(movieCard);
 
     movieCard.addEventListener("click", () => {
-      handleImageClick(movie.id);
-      window.location.href = "./pages/detail.html";
+      openDetailPage(movie.id)
     });
   });
 

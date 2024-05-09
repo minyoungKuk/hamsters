@@ -1,3 +1,4 @@
+import { openDetailPage } from "./common.js";
 
 
 let searchInput = document.querySelector(".search-input");
@@ -33,7 +34,7 @@ function searchData(val) {
         let movieId = element["id"];
         let card = `
             <div class="movie-card">
-            <a href="../pages/detail.html" class="movie-a" data-id="${movieId}">
+            <a class="movie-a" data-id="${movieId}">
               <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movieImg}" alt="${movieTitle}" />
             </a>
             <p class="movie-title">${movieTitle}</p>
@@ -53,8 +54,8 @@ function searchData(val) {
       document.querySelectorAll('.movie-a').forEach((a) => {
         a.addEventListener("click", () => {
             console.log(a.dataset.id);
-            localStorage.setItem("clickedMovieId", a.dataset.id);
-            window.location.href = "../pages/detail.html";
+            openDetailPage(a.dataset.id)
+
         });    
       })
 
