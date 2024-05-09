@@ -1,3 +1,5 @@
+import { openDetailPage } from "./common.js";
+
 let searchInput = document.querySelector('.search-input');
 let searchBtn = document.querySelector('.search-btn');
 let detailBtn = document.querySelectorAll('.detail-btn');
@@ -73,8 +75,8 @@ let slideShow = setInterval(function(){
 detailBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         console.log(btn.dataset.id);
-        localStorage.setItem("clickedMovieId", btn.dataset.id);
-        window.location.href = "./pages/detail.html";
+        openDetailPage(btn.dataset.id);
+
     });    
 })
 

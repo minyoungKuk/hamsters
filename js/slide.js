@@ -1,3 +1,5 @@
+import { openDetailPage } from "./common.js";
+
 const options = {
     method: 'GET',
     headers: {
@@ -49,11 +51,9 @@ new Swiper('.swiper', {
 
     // 이미지 클릭추가
     function handleImageClick(e) {
-      console.log('e.target', e.target)
       const targetMovie = e.target.closest('.swiper-slide');
-      console.log(targetMovie);
       const movieId = targetMovie.getAttribute('id')
-      location.href=`/pages/detail.html?movieId=${movieId}`
+      openDetailPage(movieId);
     
     }
     
@@ -101,15 +101,6 @@ popular.innerHTML ="";
     }); 
   });
 
-
-     // 이미지 클릭추가
-     function handleImageClick(e) {
-      // console.log('e.target', e.target)
-      const targetMovie = e.target.closest('.swiper-slide');
-      // console.log(targetMovie);
-      const movieId = targetMovie.getAttribute('id')
-      location.href=`/pages/detail.html?movieId=${movieId}`
-    }
     
         // breakpoints:{
         //   280: {
