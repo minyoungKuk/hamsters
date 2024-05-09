@@ -1,26 +1,25 @@
 export function createCard(element) {
   const movieCard = document.createElement("li");
-  movieCard.className = "movie-card";
+  const content = document.createElement("div");
+  const title = document.createElement("p");
+  const score = document.createElement("p");
+
   movieCard.style.backgroundImage = `url('https://image.tmdb.org/t/p/w185${element.poster_path}')`;
   movieCard.style.backgroundSize = "240px 320px";
 
-  const content = document.createElement("die");
-  content.className = "content";
-  movieCard.appendChild(content);
+  title.textContent = element.title;
 
-  const titlel = document.createElement("p");
-  titlel.innerText = element.title;
-  titlel.className = "title";
-  movieCard.appendChild(titlel);
-
-  const score = document.createElement("p");
   const scoreAverage = parseFloat(element.vote_average).toFixed(1);
-  score.innerText = "평점: " + scoreAverage;
-  movieCard.appendChild(score);
-  score.className = "rating";
+  score.textContent = `평점: ${scoreAverage}`;
 
-  content.appendChild(titlel);
+  movieCard.classList.add("movie-card");
+  content.classList.add("content");
+  title.classList.add("title");
+  score.classList.add("rating");
+
+  content.appendChild(title);
   content.appendChild(score);
+  movieCard.appendChild(content);
 
   return movieCard;
 }
