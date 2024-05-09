@@ -1,3 +1,5 @@
+import { openDetailPage } from "./common.js";
+
 const options = {
     method: 'GET',
     headers: {
@@ -6,7 +8,7 @@ const options = {
     }
   };
   const topRated = document.getElementById("topRated");
-  topRated.innerHTML =""; //초기화
+  topRated.innerHTML ="";
   
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   .then((response) => response.json())
@@ -21,6 +23,8 @@ const options = {
     <div class="content">
     <p class="title">${card.title}</p>
     <p class="rating">${'평점 : '}${card.vote_average.toFixed(1)}</p>
+    </div>
+    </div>
     `
   });
 });
@@ -42,46 +46,14 @@ new Swiper('.swiper', {
       prevEl: '.swiper .swiper-button-prev',
       nextEl: '.swiper .swiper-button-next',
     },
+}); 
 
-  }); 
-  // breakpoints:{
-  //   280: { slidesPerView: 2
-  //        //280px 이하의 크기에서 옵션 값 
-  //     },
-  //     768 : { slidesPerView : 3
-  //       //768px 이하의 크기에서 옵션 값 
-  //     },
-  //     1024 : { slidesPerView : 4
-  //        //1024px 이하의 크기에서 옵션 값 
-  //     },
-  //   } 
-
-    let swiper = new Swiper('.swiper', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        breakpoints: {
-            '@0.75': {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            '@1.00': {
-                slidesPerView: 4,
-                spaceBetween: 40,
-            },
-            '@1.50': {
-                slidesPerView: 4,
-                spaceBetween: 50,
-            },
-        }
-      });  
 
     // 이미지 클릭추가
-     function handleImageClick(e) {
-      console.log('e.target', e.target)
+    function handleImageClick(e) {
       const targetMovie = e.target.closest('.swiper-slide');
-      console.log(targetMovie);
       const movieId = targetMovie.getAttribute('id')
-      location.href=`/pages/detail.html?movieId=${movieId}`
+      openDetailPage(movieId);
     
     }
     
@@ -97,7 +69,7 @@ popular.innerHTML ="";
 
       popularArray.forEach((card) => {
         popular.innerHTML += `
-        <div class="swiper-slide">
+        <div class="swiper-slide" id=${card.id}>
         <img src="https://image.tmdb.org/t/p/w300${card.poster_path}" 
         class="radius_img" alt="영화이미지" />
         <div class="content">
@@ -107,7 +79,10 @@ popular.innerHTML ="";
         </div>
         `
     })
-
+    // 클릭 이벤트 리스너 추가
+    popular.addEventListener('click', handleImageClick)
+    
+    
     new Swiper('.swiper', {
       slidesPerView: 4,
       slidesPerGroup: 4,
@@ -118,43 +93,10 @@ popular.innerHTML ="";
         el: '.swiper .swiper-pagination',
         clickable: true,
       },
-    
+      
       navigation: {
         prevEl: '.swiper .swiper-button-prev',
         nextEl: '.swiper .swiper-button-next',
       },
-  }); 
-        // breakpoints:{
-        //   280: {
-        //        //280px 이하의 크기에서 옵션 값 
-        //     },
-        //     768 : {
-        //       //768px 이하의 크기에서 옵션 값 
-        //     },
-        //     1024 : {
-        //        //1024px 이하의 크기에서 옵션 값 
-        //     },
-        //   } 
-    
-    //   let swiper = new Swiper('.swiper-container', {
-    //     slidesPerView: 1,
-    //     spaceBetween: 10,
-    //     breakpoints: {
-    //         '@0.75': {
-    //             slidesPerView: 2,
-    //             spaceBetween: 20,
-    //         },
-    //         '@1.00': {
-    //             slidesPerView: 3,
-    //             spaceBetween: 40,
-    //         },
-    //         '@1.50': {
-    //             slidesPerView: 4,
-    //             spaceBetween: 50,
-    //         },
-    //     }
-    // });
+    }); 
   });
-  
-
-
