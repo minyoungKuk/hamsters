@@ -1,3 +1,7 @@
+.con:first-of-type {
+  margin-bottom: 80px;
+}
+
 .detail {
   display: flex;
   align-items: center;
