@@ -30,6 +30,10 @@ async function loadInitialMovies() {
   displayMovies();
 }
 
+function handleImageClick(movieId) {
+  localStorage.setItem("clickedMovieId", movieId);
+}
+
 function displayMovies() {
   const api = document.getElementById("totalcard");
   api.innerHTML = "";
@@ -39,7 +43,7 @@ function displayMovies() {
     api.appendChild(movieCard);
 
     movieCard.addEventListener("click", () => {
-      openDetailPage(movie.id)
+      openDetailPage(movie.id);
     });
   });
 

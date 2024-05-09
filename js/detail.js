@@ -1,5 +1,7 @@
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('movieId');
+import { openDetailPage } from "./common.js";
+const urlSearch = new URLSearchParams(window.location.search)
+const movieId= urlSearch.get('movieId')
+
 {
   const options = {
     method: "GET",
@@ -11,7 +13,7 @@ const movieId = urlParams.get('movieId');
   };
 
   fetch(
-    `https://api.themoviedb.org/3/movie/${clickedMovieId}?language=ko-KR`,
+    `https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`,
     options
   )
     .then((response) => response.json())
@@ -38,7 +40,9 @@ const movieId = urlParams.get('movieId');
 
       const rating = document.createElement("li");
       rating.className = "detail-rating";
-      rating.innerHTML = `<span class="title">평점</span> ${element.vote_average.toFixed(1)}`;
+      rating.innerHTML = `<span class="title">평점</span> ${element.vote_average.toFixed(
+        1
+      )}`;
 
       const overview = document.createElement("li");
       if (element.overview) {

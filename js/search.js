@@ -17,7 +17,6 @@ const options = {
 };
 
 function searchData(val) {
-  console.log(val);
   fetch(
     `https://api.themoviedb.org/3/search/movie?language=ko-KR&page=1&query=${val}&api_key=${apiKey}`,
     options
@@ -32,7 +31,7 @@ function searchData(val) {
         let movieId = element["id"];
         let card = `
             <div class="movie-card">
-            <a href="../pages/detail.html" class="movie-a" data-id="${movieId}">
+            <a class="movie-a" data-id="${movieId}">
               <img class="movie-img" src="https://image.tmdb.org/t/p/w500${movieImg}" alt="${movieTitle}" />
             </a>
             <p class="movie-title">${movieTitle}</p>
@@ -46,6 +45,7 @@ function searchData(val) {
       const movieNum = document.querySelectorAll(".movie-card").length;
       document.querySelector(".search-text-num").append(`${movieNum}`);
 
+      console.log(document.querySelectorAll(".movie-a"));
       // 포스터 클릭하면 상세페이지 띄우기
       document.querySelectorAll(".movie-a").forEach((a) => {
         a.addEventListener("click", () => {
@@ -79,7 +79,6 @@ searchBtn.addEventListener("click", function () {
 // 메인페이지 검색어를 주소로 받아와서 검색 결과로 표시하기
 let params = new URLSearchParams(window.location.search);
 let keyword = params.get("keyword");
-console.log(keyword);
 document.querySelector(".search-text-value").append(keyword);
 searchData(keyword);
 

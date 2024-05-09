@@ -1,8 +1,8 @@
 import { openDetailPage } from "./common.js";
 
-let searchInput = document.querySelector('.search-input');
-let searchBtn = document.querySelector('.search-btn');
-let detailBtn = document.querySelectorAll('.detail-btn');
+let searchInput = document.querySelector(".search-input");
+let searchBtn = document.querySelector(".search-btn");
+let detailBtn = document.querySelectorAll(".detail-btn");
 
 // 엔터키로 검색버튼 누르기
 searchInput.addEventListener("keyup", function (event) {
@@ -76,9 +76,6 @@ let slideShow = setInterval(function () {
 // 슬라이드 상세보기 버튼 클릭하면 상세페이지로 이동
 detailBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
-        console.log(btn.dataset.id);
         openDetailPage(btn.dataset.id);
-
     });    
 })
-
