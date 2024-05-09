@@ -100,32 +100,31 @@
   opacity: 40%;
 }
 
-.br-hidden{
+.br-hidden {
   display: none;
 }
 
-
 /* 반응형 Break point 768px */
-@media screen and (max-width : 768px) { 
-  #main{
+@media screen and (max-width: 768px) {
+  #main {
     height: 500px;
   }
 
-  .slide-btn{
+  .slide-btn {
     padding: 35px;
     top: 35%;
   }
 
-  .slide-btn button{
+  .slide-btn button {
     width: 20px;
   }
 
-  .slide-box img{
+  .slide-box img {
     width: auto;
     height: 500px;
   }
 
-  .slide-text{
+  .slide-text {
     top: 48%;
     margin: auto;
     padding-left: 4%;
@@ -145,7 +144,7 @@
     font-weight: 200;
   }
 
-  .slide-text button{
+  .slide-text button {
     width: 60px;
     height: 30px;
     font-size: 12px;
@@ -154,9 +153,7 @@
     margin-top: 15px;
   }
 
-  .br-hidden{
+  .br-hidden {
     display: block;
   }
-
-
-} 
+}
