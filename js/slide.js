@@ -8,7 +8,7 @@ const options = {
     }
   };
   const topRated = document.getElementById("topRated");
-  topRated.innerHTML =""; //초기화
+  topRated.innerHTML ="";
   
   fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   .then((response) => response.json())
@@ -100,39 +100,3 @@ popular.innerHTML ="";
       },
     }); 
   });
-
-    
-        // breakpoints:{
-        //   280: {
-        //        //280px 이하의 크기에서 옵션 값 
-        //     },
-        //     768 : {
-        //       //768px 이하의 크기에서 옵션 값 
-        //     },
-        //     1024 : {
-        //        //1024px 이하의 크기에서 옵션 값 
-        //     },
-        //   } 
-    
-    //   let swiper = new Swiper('.swiper-container', {
-    //     slidesPerView: 1,
-    //     spaceBetween: 10,
-    //     breakpoints: {
-    //         '@0.75': {
-    //             slidesPerView: 2,
-    //             spaceBetween: 20,
-    //         },
-    //         '@1.00': {
-    //             slidesPerView: 3,
-    //             spaceBetween: 40,
-    //         },
-    //         '@1.50': {
-    //             slidesPerView: 4,
-    //             spaceBetween: 50,
-    //         },
-    //     }
-    // });
-
-  
-
-
