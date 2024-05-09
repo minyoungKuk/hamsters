@@ -1,9 +1,8 @@
 import { openPopup, closePopup, confirmAction } from "./popup.js";
 
 window.onload = () => {
-  const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
   const reviewList = document.querySelector(".review-list");
-  const clickedMovieId = localStorage.getItem("clickedMovieId");
+  const clickedMovieId = getMovieIdFromUrl();
 
   // 리뷰 추가
   const reviewForm = document.querySelector(".review-form");
@@ -13,7 +12,6 @@ window.onload = () => {
     const nickname = document.getElementById("nickname").value;
     const password = document.getElementById("password").value;
     const review = document.getElementById("reviewInput").value;
-    const movieId = localStorage.getItem("clickedMovieId");
 
     // 유효성 검사 - 닉네임 2글자 이상!
     if (nickname.length < 2) {
@@ -28,7 +26,7 @@ window.onload = () => {
     }
 
     // 유효성 검사 - 닉네임 중복 금지!
-    if (!isNicknameUnique(nickname, movieId)) {
+    if (!isNicknameUnique(nickname, clickedMovieId)) {
       openPopup(
         "경고",
         "이미 존재하는 아이디입니다. 다른 아이디를 사용해주세요."
@@ -36,15 +34,12 @@ window.onload = () => {
       return;
     }
 
-    let reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
-    reviewData.push({ nickname, password, review, movieId });
+    const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviewData.push({ nickname, password, review, movieId: clickedMovieId });
     localStorage.setItem("reviews", JSON.stringify(reviewData));
 
     // 현재 영화 리뷰만 표시
-    if (movieId === clickedMovieId) {
-      appendReviewItem({ nickname, review });
-    }
-
+    renderReviews(clickedMovieId);
     reviewForm.reset();
   });
 
@@ -57,12 +52,52 @@ window.onload = () => {
     }
   });
 
+  // 페이지 로드 후 하드코딩된 리뷰 리스트와 동적으로 가져온 리뷰 리스트를 모두 보여줍니다.
+  renderReviews(clickedMovieId);
+};
+
+function getMovieIdFromUrl() {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  return urlSearchParams.get("movieId");
+}
+
+function renderReviews(movieId) {
+  const reviewList = document.querySelector(".review-list");
+  reviewList.innerHTML = "";
+
+  // 하드코딩된 리뷰 리스트를 추가
+  const hardcodedReviews = [
+    {
+      name: "삥뽕이",
+      contents: "재밌으니까 꼭 보세요!",
+    },
+    {
+      name: "화가난헐크",
+      contents: "너무너무너무 무서워서 잠도 못잤습니다 그래도 잼나네욤",
+    },
+    {
+      name: "최대글자6개",
+      contents: "연기력이 너무 좋아요!!",
+    },
+  ];
+
+  hardcodedReviews.forEach((review) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <span class="name">${review.name}</span>
+      <span class="contents">${review.contents}</span>
+      <span class="delete-btn"></span>
+    `;
+    reviewList.appendChild(listItem);
+  });
+
+  const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
   reviewData.forEach((review) => {
-    if (review.movieId === clickedMovieId) {
+    if (review.movieId === movieId) {
       appendReviewItem(review);
     }
   });
-};
+}
 
 const appendReviewItem = (review) => {
   const reviewList = document.querySelector(".review-list");
