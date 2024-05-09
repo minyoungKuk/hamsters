@@ -58,3 +58,12 @@
 .movie-title{
     font-size: 17px;
 }
+
+
+/* 반응형 Break point 768px */
+@media screen and (max-width : 768px){
+    .search-result{
+        grid-template-columns: 1fr 1fr ;
+        
+    }
+}
