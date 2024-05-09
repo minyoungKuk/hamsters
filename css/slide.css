@@ -1,0 +1,132 @@
+img {
+    display: block;
+    width: 100%
+}
+
+.swiper {
+    top: 20%;
+    width: 90%;
+    background-color: black;
+    display: flex;
+    
+  }
+
+.swiper-wrapper {
+    height: 330px;
+}
+.swiper #topRated {
+    height: 600px;
+
+}
+.swiper #popular {
+    height: 600px;
+}
+.radius_img {
+    width: 240px;
+    height: 320px;
+    border-radius: 10px;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.radius_img:hover {
+    opacity: 0.1;
+    box-shadow: 0 4px 12px rgba(0, 79, 255, 0.4);
+    transition: .4s;
+}
+
+.category {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    bottom: 30px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 330px;
+    
+}
+/* hover */
+.swiper-slide:hover .content { 
+    transition: .4s;
+    color: #fff;
+}
+/* hover */
+.swiper-slide:hover .content .rating{
+    transition: .4s;
+    color: gold !important;
+}
+/* hover */
+.swiper-slide .content {
+  color: transparent;
+  position: absolute;
+  pointer-events: none;
+  bottom: 20px;
+
+}
+.swiper-slide .content .top {
+   top: 10%;
+}    
+
+
+.swiper .swiper-pagination-bullet {
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: red;
+    position: relative;
+    bottom: 220px;
+}
+.swiper .swiper-pagination-bullet-active {
+    background-color: #fff;
+    width: 40px;
+}
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after{
+    backdrop-filter: blur(3px);
+    background-size: 18px;
+    box-shadow: 0, 0 43px 69px rgba(0,4);
+    background-position: center;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: 0.4s;
+    position: absolute;
+}
+.swiper .swiper-button-next.swiper-button-disabled,
+.swiper .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next{
+    position: absolute;
+    top: 260px;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.swiper .swiper-button-next {
+    color: #fff;
+}
+
+.swiper .swiper-button-prev {
+    color: #fff;
+
+}
+
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover{
+    color: red;
+}

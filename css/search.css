@@ -1,0 +1,69 @@
+/* search-title */
+#search{
+    width: 100vw;
+    height: 270px;
+    text-align: center;
+}
+
+.search-title{
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+.search-text{
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+}
+
+.search-text div{
+    max-width: 650px;
+    min-width: 280px;
+    margin: 0 auto;
+    border-bottom: 2px solid red;
+    padding: 15px 0px;
+    margin-bottom: 15px;
+}
+
+.search-text h2{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/* search-result */
+.search-result{
+    width: 100%;
+    height: auto;
+    min-height: 44vh;
+    margin-top: 100px;
+    padding: 0px 120px 120px 120px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    row-gap: 80px;
+    column-gap: 50px;
+}
+
+.movie-card p{
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.movie-img{
+    width: 378px;
+    min-width: 250px;
+}
+
+.movie-title{
+    font-size: 17px;
+}
+
+
+/* 반응형 Break point 768px */
+@media screen and (max-width : 768px){
+    .search-result{
+        grid-template-columns: 1fr 1fr ;
+        
+    }
+}
