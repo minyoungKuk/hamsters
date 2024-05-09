@@ -63,9 +63,9 @@ function getMovieIdFromUrl() {
 
 function renderReviews(movieId) {
   const reviewList = document.querySelector(".review-list");
-  reviewList.innerHTML = ""; // 기존에 보여줬던 하드코딩된 리뷰 리스트를 초기화합니다.
+  reviewList.innerHTML = "";
 
-  // 하드코딩된 리뷰 리스트를 추가합니다.
+  // 하드코딩된 리뷰 리스트를 추가
   const hardcodedReviews = [
     {
       name: "삥뽕이",
@@ -91,7 +91,6 @@ function renderReviews(movieId) {
     reviewList.appendChild(listItem);
   });
 
-  // 로컬 스토리지에서 동적으로 가져온 리뷰 리스트를 추가합니다.
   const reviewData = JSON.parse(localStorage.getItem("reviews")) || [];
   reviewData.forEach((review) => {
     if (review.movieId === movieId) {
