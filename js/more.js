@@ -41,7 +41,7 @@ function displayMovies() {
     api.appendChild(movieCard);
 
     movieCard.addEventListener("click", () => {
-      openDetailPage(movie.id)
+    openDetailPage(movie.id);
     });
   });
 
