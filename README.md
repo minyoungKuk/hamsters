@@ -84,7 +84,7 @@
   <tbody>
     <tr>
       <td align="center"><a href="https://github.com/minyoungKuk/hamsters.git"><img src="/img/member/minyoung.png" width="100px;alt=""/><br /><sub><b>팀장 : 국민영</b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="/img/member/seoyoung.jpg" width="100px;" alt=""/><br /><sub><b>팀원 : 손서영</b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="/img/member/seoyoung.png" width="100px;" alt=""/><br /><sub><b>팀원 : 손서영</b></sub></a><br /></td>
       <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b>팀원 : 김성준</b></sub></a><br /></td>
       <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b>팀원 : 한종섭</b></sub></a><br /></td>
        <td align="center"><a href=""><img src="" width="100px;" alt=""/><br /><sub><b>팀원 : 전하임</b></sub></a><br /></td>
