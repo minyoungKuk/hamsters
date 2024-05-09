@@ -1,14 +1,8 @@
-
-/* 섹션 */
 .totalmoive {
   display: block;
   word-wrap: break-word;
-  text-align: center;
-  /* margin-left: 270px;
-  margin-right: 270px; */
 }
 
-/* 제목 */
 .total-title {
   font-weight: 700;
   font-size: 40px;
@@ -16,13 +10,11 @@
   margin-bottom: 30px;
 }
 
-/* ul 컨테이너*/
 #totalcard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0px;
   margin: 0 auto;
-  /* width: 1200px; */
 }
 
 /* li */
@@ -33,10 +25,41 @@
   height: 320px;
   margin: 0 0 30px 0;
   justify-self: center;
-  border: solid rgb(243, 228, 228);
   border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-/* 버튼 */
+
+.movie-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+}
+.movie-card:hover::before {
+  opacity: 1;
+  transition: all 0.3s;
+}
+.movie-card .content {
+  color: transparent;
+  position: absolute;
+  pointer-events: none;
+  bottom: 30px;
+  left: 20px;
+  pointer-events: none;
+}
+.movie-card:hover .content {
+  color: white;
+}
+.movie-card:hover .content .rating {
+  color: gold;
+}
+
 #more-btn {
   font-size: 13px;
   display: block;
@@ -46,6 +69,5 @@
   font: inherit;
   cursor: pointer;
   color: white;
-  border: solid rgb(243, 228, 228);
   margin: 50px auto 40px auto;
 }
