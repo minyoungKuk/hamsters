@@ -1,8 +1,8 @@
 import { openDetailPage } from "./common.js";
 
-let searchInput = document.querySelector(".search-input");
-let searchBtn = document.querySelector(".search-btn");
-let detailBtn = document.querySelectorAll(".detail-btn");
+let searchInput = document.querySelector('.search-input');
+let searchBtn = document.querySelector('.search-btn');
+let detailBtn = document.querySelectorAll('.detail-btn');
 
 // 엔터키로 검색버튼 누르기
 searchInput.addEventListener("keyup", function (event) {
