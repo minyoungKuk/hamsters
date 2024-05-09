@@ -49,3 +49,8 @@ li:hover .accordionTitle {
   text-decoration: underline;
   font-weight: 500;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+}

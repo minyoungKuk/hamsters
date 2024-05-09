@@ -1,5 +1,4 @@
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('movieId');
+const clickedMovieId = localStorage.getItem("clickedMovieId");
 {
   const options = {
     method: "GET",
@@ -38,7 +37,9 @@ const movieId = urlParams.get('movieId');
 
       const rating = document.createElement("li");
       rating.className = "detail-rating";
-      rating.innerHTML = `<span class="title">평점</span> ${element.vote_average.toFixed(1)}`;
+      rating.innerHTML = `<span class="title">평점</span> ${element.vote_average.toFixed(
+        1
+      )}`;
 
       const overview = document.createElement("li");
       if (element.overview) {
