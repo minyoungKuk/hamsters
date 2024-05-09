@@ -1,6 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('movieId');
-
 {
   const options = {
     method: "GET",
@@ -12,26 +11,23 @@ const movieId = urlParams.get('movieId');
   };
 
   fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
+    `https://api.themoviedb.org/3/movie/${clickedMovieId}?language=ko-KR`,
     options
   )
     .then((response) => response.json())
     .then((element) => {
       const detail = document.getElementById("detail");
 
-      // <img> 요소 생성
       const postimg = document.createElement("img");
       postimg.src = "https://image.tmdb.org/t/p/w185" + element.poster_path;
       postimg.alt = "poster";
       postimg.className = "detail-poster";
       detail.appendChild(postimg);
 
-      // <ul> 요소 생성
       const detailList = document.createElement("ul");
       detailList.className = "detail-list";
       detail.appendChild(detailList);
 
-      // <li> 요소 생성
       const titleli = document.createElement("p");
       titleli.innerText = element.title;
       titleli.className = "detail-title";
@@ -45,9 +41,12 @@ const movieId = urlParams.get('movieId');
       rating.innerHTML = `<span class="title">평점</span> ${element.vote_average.toFixed(1)}`;
 
       const overview = document.createElement("li");
-      overview.innerHTML = `<span class="title">줄거리</span><p class="detail-overview">${element.overview}</p>`;
+      if (element.overview) {
+        overview.innerHTML = `<span class="title">줄거리</span><p class="detail-overview">${element.overview}</p>`;
+      } else {
+        overview.innerHTML = `<span class="title">줄거리</span><p class="detail-overview"> 현재 한글로 된 줄거리는 지원되지 않습니다.</p>`;
+      }
 
-      // <ul> 안에 <li> 요소들 추가
       detailList.appendChild(titleli);
       detailList.appendChild(releaseDate);
       detailList.appendChild(rating);

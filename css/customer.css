@@ -1,0 +1,51 @@
+.customer {
+  padding: 160px 200px;
+}
+
+.customer h4 {
+  font-size: 1.4rem;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+  padding-top: 30px;
+}
+
+hr {
+  height: 0.5px;
+  border: 0;
+  background-color: gray;
+  margin-top: 20px;
+}
+
+.text {
+  padding-top: 20px;
+}
+
+.accordionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+li:hover .accordionTitle {
+  color: #ffffffba;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.accordion .item .text {
+  display: none;
+}
+
+.accordion .item .text.show {
+  display: block;
+}
+
+.accordion .fna-a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+}

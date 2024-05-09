@@ -30,8 +30,6 @@ async function loadInitialMovies() {
   displayMovies();
 }
 
-
-
 function displayMovies() {
   const api = document.getElementById("totalcard");
   api.innerHTML = "";
@@ -40,7 +38,6 @@ function displayMovies() {
     const movieCard = createCard(movie);
     api.appendChild(movieCard);
 
-    // 클릭 이벤트 리스너 추가
     movieCard.addEventListener("click", () => {
       openDetailPage(movie.id)
     });
