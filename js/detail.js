@@ -1,5 +1,6 @@
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('movieId');
+import { openDetailPage } from "./common.js";
+const urlSearch = new URLSearchParams(window.location.search)
+const movieId= urlSearch.get('movieId');
 {
   const options = {
     method: "GET",
