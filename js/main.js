@@ -18,7 +18,7 @@ document.querySelector(".search-btn").addEventListener("click", function () {
   if (document.querySelector(".search-input").value === "") {
     alert("검색어를 입력해주세요.");
   } else if (document.querySelector(".search-input").value !== "") {
-    window.location.href = `/pages/search.html?keyword=${keyword}`;
+    window.location.href = `../pages/search.html?keyword=${keyword}`;
   }
 });
 
