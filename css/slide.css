@@ -57,22 +57,20 @@ img {
     height: 330px;
     
 }
-/* hover */
 .swiper-slide:hover .content { 
     transition: .4s;
     color: #fff;
 }
-/* hover */
 .swiper-slide:hover .content .rating{
     transition: .4s;
     color: gold !important;
 }
-/* hover */
 .swiper-slide .content {
   color: transparent;
   position: absolute;
   pointer-events: none;
-  bottom: 20px;
+  bottom: 30px;
+  left: 20px;
 
 }
 .swiper-slide .content .top {
