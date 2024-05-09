@@ -82,8 +82,3 @@ detailBtn.forEach((btn) => {
     });    
 })
 
-
-// footer
-document.querySelector('.custmer-center').addEventListener('click', function(){
-    alert('고객센터는 준비중입니다.');
-})
