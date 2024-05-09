@@ -92,8 +92,6 @@ img {
 }
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after{
-    /* width: 30px; */
-    /* background-color: black; */
     backdrop-filter: blur(3px);
     background-size: 18px;
     box-shadow: 0, 0 43px 69px rgba(0,4);
