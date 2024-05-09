@@ -1,4 +1,3 @@
-import { openDetailPage } from "./common.js";
 
 
 let searchInput = document.querySelector(".search-input");
@@ -54,8 +53,8 @@ function searchData(val) {
       document.querySelectorAll('.movie-a').forEach((a) => {
         a.addEventListener("click", () => {
             console.log(a.dataset.id);
-              openDetailPage(a.dataset.id)
-
+            localStorage.setItem("clickedMovieId", a.dataset.id);
+            window.location.href = "../pages/detail.html";
         });    
       })
 
